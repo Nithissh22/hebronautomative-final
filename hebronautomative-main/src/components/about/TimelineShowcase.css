@@ -1,0 +1,232 @@
+.growth-section {
+  background-color: #f6f8fa; /* Light off-white similar to image */
+  padding: 80px 0 100px;
+  overflow: hidden;
+}
+
+.growth-header,
+.milestone-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.milestone-header {
+  margin-top: 80px;
+}
+
+.growth-heading {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0a1628; /* Dark Navy */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Carousel Columns */
+.journey-carousel-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.journey-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  padding-bottom: 20px;
+}
+
+.journey-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.journey-col {
+  flex: 0 0 300px; /* Exact width to match the JS scrollby logic */
+  min-width: 300px;
+  padding: 0 40px;
+  border-right: 2px solid var(--brand-cyan, #00b4d8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.journey-col:last-child {
+  border-right: none;
+}
+
+.journey-icon {
+  margin-bottom: 24px;
+  color: #0a1628;
+}
+
+.journey-icon svg {
+  width: 48px;
+  height: 48px;
+  stroke-width: 1.2;
+}
+
+.journey-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.journey-text {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+}
+
+/* Timeline Stepper UI */
+.milestone-timeline-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.timeline-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0a1628;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.timeline-arrow:hover:not(:disabled) {
+  border-color: var(--brand-cyan, #00b4d8);
+  color: var(--brand-cyan, #00b4d8);
+}
+
+.timeline-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.timeline-track-ui {
+  position: relative;
+  flex: 1;
+  height: 60px;
+  margin: 0 40px;
+}
+
+.timeline-base-line {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #cbd5e1;
+  border-radius: 2px;
+}
+
+.timeline-progress-line {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  height: 3px;
+  background-color: var(--brand-cyan, #00b4d8);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.timeline-point {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.point-year {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 16px;
+  color: var(--brand-cyan, #00b4d8);
+  margin-bottom: 8px;
+  transition: font-weight 0.2s;
+}
+
+.point-year.active {
+  font-weight: 700;
+}
+
+.point-dot-outer {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  margin-top: 10px; /* Align precisely with the line (40px top - 16px height...) */
+  position: relative;
+  top: -2px; /* Fine-tune optical alignment with the 3px line */
+}
+
+.point-dot-outer.past {
+  background-color: var(--brand-cyan, #00b4d8);
+}
+
+.point-dot-outer.active {
+  background-color: var(--brand-cyan, #00b4d8);
+  width: 20px;
+  height: 20px;
+  top: -4px;
+}
+
+.point-dot-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.point-dot-outer.active .point-dot-inner {
+  opacity: 1;
+}
+
+/* Spacer to allow carousel to scroll to the end */
+.journey-spacer {
+  flex: 0 0 calc(100% - 300px);
+  min-width: calc(100% - 300px);
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .journey-col {
+    flex: 0 0 260px;
+    min-width: 260px;
+    padding: 0 20px;
+  }
+  .journey-spacer {
+    flex: 0 0 calc(100% - 260px);
+    min-width: calc(100% - 260px);
+  }
+  .timeline-track-ui {
+    margin: 0 20px;
+  }
+  .point-year {
+    font-size: 13px;
+  }
+}

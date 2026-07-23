@@ -1,0 +1,61 @@
+.mini-nav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 48px;
+  background: #030815;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  z-index: 10;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  transform: translateX(-48px);
+  animation: slideMiniNav 0.3s ease 0.2s forwards;
+}
+
+@keyframes slideMiniNav {
+  to {
+    transform: translateX(0);
+  }
+}
+
+.mini-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.mini-nav__item:hover, .mini-nav__item.is-active {
+  opacity: 1;
+}
+
+.mini-nav__number {
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transform: rotate(-90deg);
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.mini-nav__line {
+  width: 2px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  transition: background 0.3s ease;
+}
+
+.mini-nav__item.is-active .mini-nav__line {
+  background: #00b4d8;
+}
+.mini-nav__item.is-active .mini-nav__number {
+  color: #00b4d8;
+}

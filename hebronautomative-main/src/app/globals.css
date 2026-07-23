@@ -1,0 +1,208 @@
+:root {
+  /* ── PRIMARY BRAND ── */
+  --brand-navy:        #1E2D8A;   /* inner badge navy — primary brand */
+  --brand-navy-deep:   #141F6B;   /* darker navy — hero, footer */
+  --brand-navy-mid:    #2D3FA0;   /* hover states, borders */
+  --brand-cyan:        #0EA3E4;   /* outer ring — primary accent */
+  --brand-cyan-light:  #39C4F5;   /* highlights, hover glows */
+  --brand-cyan-pale:   #D6F0FB;   /* tinted backgrounds */
+
+  /* ── BACKGROUNDS ── */
+  --bg-white:          #FFFFFF;
+  --bg-off:            #F5F8FC;   /* cool off-white — section alternator */
+  --bg-dark:           #0E1A5C;   /* hero, footer — deepest navy */
+  --bg-card:           #FFFFFF;
+
+  /* ── TEXT ── */
+  --text-dark:         #0A1240;   /* near-black with navy tint */
+  --text-body:         #3D4E6B;   /* warm navy-grey for body */
+  --text-muted:        #7A8EAA;   /* labels, captions */
+  --text-on-dark:      #EDF3FB;   /* on navy backgrounds */
+  --text-on-dark-dim:  rgba(237,243,251,0.6);
+
+  /* ── BORDERS ── */
+  --border-light:      #D8E6F2;   /* light dividers */
+  --border-mid:        #B0CAE0;   /* card borders */
+
+  /* ── FUNCTIONAL ── */
+  --accent:            #0EA3E4;   /* same as brand-cyan */
+  --accent-hover:      #0B8EC8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-white);
+  color: var(--text-body);
+  font-family: var(--font-body), 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Section rhythm */
+section { position: relative; }
+
+/* Global label style */
+.eyebrow {
+  font-family: var(--font-mono), 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--brand-cyan);
+  display: block;
+  margin-bottom: 16px;
+}
+
+/* Section heading pattern */
+.section-heading {
+  font-family: var(--font-display), 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.section-heading--light {
+  color: var(--text-on-dark);
+}
+
+/* Thin cyan rule — appears under select headings */
+.heading-rule {
+  width: 48px;
+  height: 2px;
+  background: var(--brand-cyan);
+  margin-bottom: 32px;
+}
+
+/* Spec data text */
+.spec-value {
+  font-family: var(--font-mono), 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.spec-label {
+  font-family: var(--font-mono), 'Plus Jakarta Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--brand-navy);
+  color: white;
+  font-family: var(--font-mono), 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 200ms ease, gap 200ms ease;
+}
+
+.btn-primary:hover {
+  background: var(--brand-navy-mid);
+  gap: 16px;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--brand-navy);
+  font-family: var(--font-mono), 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 13px 32px;
+  text-decoration: none;
+  border: 1.5px solid var(--border-mid);
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--brand-navy);
+  background: var(--bg-off);
+}
+
+.btn-outline--light {
+  color: white;
+  border-color: rgba(255,255,255,0.3);
+}
+
+.btn-outline--light:hover {
+  border-color: white;
+  background: rgba(255,255,255,0.08);
+}
+
+/* Base utility */
+.global-fade-in {
+  animation: pageFadeIn 400ms ease-in-out forwards;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.page-padding {
+  padding-top: 140px;
+  padding-bottom: 120px;
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -9999px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--brand-cyan);
+  color: white;
+  padding: 16px 32px;
+  z-index: 9999;
+  border-radius: 0 0 4px 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: top 150ms ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}

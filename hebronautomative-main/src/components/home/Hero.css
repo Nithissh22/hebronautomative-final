@@ -1,0 +1,245 @@
+/* ── HERO WRAPPER ── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;       /* center vertically */
+  overflow: hidden;
+}
+
+.hero__bg-image {
+  display: none;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: #0e1a5c; /* Solid blue background */
+  z-index: 1;
+}
+
+/* ── HERO CONTENT BODY ── */
+.hero__body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 72px;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.hero__center {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+}
+
+.hero__logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 142px;
+  height: 142px;
+  margin-bottom: 18px;
+  padding: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+.hero__logo {
+  display: block;
+  width: 132px;
+  height: 132px;
+  object-fit: contain;
+}
+
+
+/* Corner image column inside grid */
+.hero__corner-col {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  flex-shrink: 0;
+  align-self: end;
+  margin-bottom: -40px;
+}
+
+
+/* ── EYEBROW ── */
+.hero__center .eyebrow {
+  font-family: var(--font-mono), 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.7);
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* ── H1 HEADING ── */
+.hero__h1 {
+  font-family: var(--font-display), 'Syne', sans-serif;
+  font-size: clamp(24px, 3.5vw, 48px);
+  font-weight: 800;
+  color: #2b2d30;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.hero__company-name {
+  font-size: clamp(24px, 4.2vw, 44px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 12px;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.hero__main-heading {
+  display: block;
+  margin-top: 4px;
+  color: #e2e8f0;
+  font-size: clamp(20px, 2.4vw, 30px);
+  font-weight: 400;
+}
+
+/* em also matches greyish black */
+.hero__h1 em {
+  font-style: normal;
+  color: #2b2d30;
+}
+
+/* ── SUBTEXT ── */
+.hero__sub {
+  font-family: var(--font-body), 'Inter', sans-serif;
+  font-size: 16px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.75;
+  max-width: 600px;
+  margin-bottom: 36px;
+}
+
+/* ── BUTTONS ROW ── */
+.hero__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.btn-outline {
+  font-family: var(--font-mono), 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 24px;
+  text-decoration: none;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--bg-dark);
+}
+
+
+
+/* ── CERT BAR — below hero, NOT inside it ── */
+.cert-bar {
+  background: #000;
+  display: flex;
+  align-items: center;
+  height: 52px;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.cert-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, #000 0%, transparent 10%, transparent 90%, #000 100%);
+  pointer-events: none;
+}
+
+.cert-bar-marquee {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: cert-marquee 20s linear infinite;
+}
+
+.cert-bar__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-right: 48px;
+  font-family: var(--font-mono), 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.cert-bar__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand-cyan);
+  flex-shrink: 0;
+}
+
+@keyframes cert-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 1200px) {
+  .hero__body,
+  .hero__body--split {
+    grid-template-columns: 1fr;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+  }
+  .hero__center { align-items: center; }
+  .hero__right-corner-image { display: none; }
+  .hero__right { display: none; }
+}
+
+@media (max-width: 768px) {
+  .hero__body { padding: 0 24px 56px; }
+  .hero__h1 { font-size: 44px; }
+  .hero__logo-wrap { width: 112px; height: 112px; margin-bottom: 14px; }
+  .hero__logo { width: 102px; height: 102px; }
+  .hero__company-name { white-space: normal; }
+  .cert-bar { padding: 0 24px; overflow-x: auto; gap: 24px; }
+}

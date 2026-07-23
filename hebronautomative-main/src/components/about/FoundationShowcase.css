@@ -1,0 +1,342 @@
+.foundation-section {
+  background: var(--bg-white, #ffffff);
+  padding: 80px 40px;
+  width: 100%;
+}
+
+.foundation-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header */
+.fd-header {
+  margin-bottom: 60px;
+}
+
+.fd-heading-wrap {
+  border-left: 3px solid #0099cc;
+  padding-left: 20px;
+  margin-bottom: 24px;
+}
+
+.fd-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: #0d1b4b;
+  line-height: 1.1;
+  margin: 0;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.fd-header.visible .fd-heading {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.fd-subtext {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 17px;
+  color: #4a5568;
+  max-width: 520px;
+  line-height: 1.6;
+  margin: 0;
+  margin-left: 23px;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: transform 0.6s ease-out 0.15s, opacity 0.6s ease-out 0.15s;
+}
+
+.fd-header.visible .fd-subtext {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Stats */
+.fd-stats-row {
+  display: flex;
+  background: #ffffff;
+  margin-bottom: 80px;
+}
+
+.fd-stat-card {
+  flex: 1;
+  text-align: center;
+  padding: 24px 0;
+  border-right: 1px solid #e2e8f0;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.fd-stat-card:last-child {
+  border-right: none;
+}
+
+.fd-stats-row.visible .fd-stat-card {
+  opacity: 1;
+}
+
+.fd-stat-card:nth-child(1) { transition-delay: 0s; }
+.fd-stat-card:nth-child(2) { transition-delay: 0.08s; }
+.fd-stat-card:nth-child(3) { transition-delay: 0.16s; }
+.fd-stat-card:nth-child(4) { transition-delay: 0.24s; }
+
+.fd-stat-num {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: #0d1b4b;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.fd-stat-label {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+/* Two Column Body */
+.fd-body {
+  display: flex;
+  gap: 64px;
+}
+
+.fd-left {
+  flex: 1;
+  transform: translateX(-20px);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.fd-left.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.fd-eyebrow {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 12px;
+  color: #4a5568;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: none;
+  font-weight: 400;
+}
+
+.fd-dot {
+  color: #0099cc;
+  font-size: 10px;
+}
+
+.fd-text-content {
+  max-width: 480px;
+  padding-left: 24px;
+  border-left: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.fd-text-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -1px;
+  width: 2px;
+  height: 60px;
+  background: #00b4d8;
+}
+
+.fd-text-content p:first-child {
+  font-size: 20px;
+  color: #0d1b4b;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.fd-text-content p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #475569;
+  margin: 0 0 16px 0;
+}
+
+.fd-text-content p:last-child {
+  margin-bottom: 0;
+}
+
+.fw-500 {
+  font-weight: 600;
+  color: #050d1f;
+}
+
+/* Right Table */
+.fd-right {
+  flex: 1;
+  transform: translateX(20px);
+  opacity: 0;
+  transition: transform 0.5s ease-out 0.1s, opacity 0.5s ease-out 0.1s;
+}
+
+.fd-right.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.fd-facts-card {
+  background: #050d1f;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(5, 13, 31, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.fd-facts-card::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.fd-card-eyebrow {
+  color: #00b4d8;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+  font-weight: 700;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.fd-facts-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fd-facts-table tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.fd-facts-table tr:last-child {
+  border-bottom: none;
+}
+
+.fd-facts-table tr::before {
+  content: '';
+  position: absolute;
+  left: -40px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #00b4d8;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.fd-facts-table tr:hover::before {
+  opacity: 1;
+}
+
+.fd-facts-table th, .fd-facts-table td {
+  padding: 16px 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.fd-facts-table th {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: 500;
+  width: 40%;
+}
+
+.fd-facts-table td {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #ffffff;
+  width: 60%;
+}
+
+/* Reduced Motion */
+.highlight-turnover {
+  color: #fbbf24 !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  background: rgba(251, 191, 36, 0.1);
+  padding: 6px 12px !important;
+  border-radius: 6px;
+  border-left: 2px solid #fbbf24;
+  display: inline-block;
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fd-heading, .fd-subtext, .fd-stat-card, .fd-left, .fd-right {
+    transition: opacity 0.5s ease-out !important;
+    transform: none !important;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .foundation-section {
+    padding: 60px 20px;
+  }
+  
+  .fd-heading {
+    font-size: 32px;
+  }
+  
+  .fd-subtext {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  
+  .fd-stats-row {
+    flex-wrap: wrap;
+    border-top: 1px solid #e2e8f0;
+    border-left: 1px solid #e2e8f0;
+  }
+  
+  .fd-stat-card {
+    flex: 0 0 50%;
+    border-right: 1px solid #e2e8f0;
+  }
+  
+  .fd-stat-card:nth-child(1),
+  .fd-stat-card:nth-child(2) {
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .fd-body {
+    flex-direction: column;
+    gap: 48px;
+  }
+  
+  .fd-text-content {
+    max-width: 100%;
+  }
+  
+  .fd-facts-table th {
+    width: 35%;
+  }
+  
+  .fd-facts-table td {
+    width: 65%;
+  }
+}

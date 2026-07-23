@@ -1,0 +1,37 @@
+.home-cta {
+  background: var(--bg-dark);
+  padding: 120px 0;
+  text-align: center;
+}
+
+.home-cta__inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-cta__sub {
+  font-size: 18px;
+  color: var(--text-on-dark-dim);
+  margin-bottom: 48px;
+}
+
+.home-cta__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.home-cta__enquiry {
+  padding: 19px 46px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .home-cta { padding: 80px 0; }
+  .home-cta__actions { flex-direction: column; width: 100%; max-width: 320px; }
+  .home-cta__actions > * { width: 100%; justify-content: center; }
+  .home-cta__enquiry { padding: 18px 32px; }
+}

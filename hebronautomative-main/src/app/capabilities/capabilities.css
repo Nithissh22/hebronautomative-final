@@ -1,0 +1,129 @@
+/* capabilities.css - Global styles for Capabilities Page */
+.page-fade-in {
+  animation: pageEntry 0.6s ease forwards;
+  background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 50%, #7dd3fc 100%);
+  min-height: 100vh;
+}
+
+@keyframes pageEntry {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Quote Form in Drawer */
+.quote-form input, .quote-form textarea {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 16px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.quote-form input:focus, .quote-form textarea:focus {
+  outline: none;
+  border-color: #00b4d8;
+}
+
+.quote-form button {
+  width: 100%;
+  background: #0d1b4b;
+  color: #fff;
+  padding: 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.quote-form button:hover {
+  background: #00b4d8;
+}
+
+/* Specs Drawer Overlay */
+.specs-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.specs-drawer-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.specs-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 480px;
+  background: #fff;
+  z-index: 101;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.specs-drawer.is-open {
+  transform: translateX(0);
+}
+
+.specs-drawer__header {
+  padding: 24px 32px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.specs-drawer__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #050d1f;
+}
+
+.specs-drawer__close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  padding: 8px;
+  margin: -8px;
+  transition: color 0.2s;
+}
+
+.specs-drawer__close:hover {
+  color: #ef4444;
+}
+
+.specs-drawer__content {
+  padding: 32px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.specs-drawer__section-title {
+  margin: 0 0 16px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #94a3b8;
+  font-weight: 700;
+}

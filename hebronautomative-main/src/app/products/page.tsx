@@ -1,0 +1,85 @@
+import React from 'react';
+import Navbar from '@/components/layout/Navbar';
+import './products.css';
+
+const PRODUCTS_DATA = [
+  {
+    slug: 'eyelet-assembly',
+    title: 'Eyelet Assembly',
+    subtitle: 'PDC PARTS — EYELET ASSEMBLY',
+    image: '/images/eyelet_assembly_product.png',
+  },
+  {
+    slug: 'spring-seat-adjuster',
+    title: 'Spring Seat Adjuster',
+    subtitle: 'PDC PARTS — SPRING SEAT ADJUSTER',
+    image: '/images/spring_seat_product.png',
+  },
+  {
+    slug: 'outer-tube',
+    title: 'Outer Tube LH & RH',
+    subtitle: 'GDC PARTS — FULL FINISHED WITH POWDER COATED PART',
+    image: '/images/outer_tube_product.png',
+  },
+  {
+    slug: 'shox-parts',
+    title: 'Suspension & Shox Parts',
+    subtitle: 'SHOCK ABSORBER ASSEMBLY COMPONENTS',
+    image: '/images/our_products_shox.png',
+  }
+];
+
+export default function ProductsPage() {
+  return (
+    <>
+      <Navbar />
+      
+      <section className="products-hero">
+        <img 
+          src="/images/process-capabilities-bg.png" 
+          alt="Process Capabilities Background" 
+          className="products-hero__bg" 
+        />
+        <div className="products-hero__overlay"></div>
+        
+        <div className="container products-hero__content">
+          <div className="eyebrow hero-eyebrow">
+            MANUFACTURING PRODUCTS
+          </div>
+          <h1 className="hero-serif-title">Our Products</h1>
+        </div>
+      </section>
+
+      <main id="main-content" style={{ backgroundColor: '#F8FAFC', padding: '64px 0 120px 0' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))', gap: '32px' }}>
+            {PRODUCTS_DATA.map((product) => (
+              <div 
+                key={product.slug} 
+                id={product.slug} 
+                className="bento-card" 
+                style={{ flexDirection: 'column', borderRadius: '16px', overflow: 'hidden', backgroundColor: '#ffffff', boxShadow: '0 10px 30px rgba(0,0,0,0.06)' }}
+              >
+                <div style={{ width: '100%', backgroundColor: '#ffffff', padding: '16px', display: 'flex', justifyContent: 'center', alignItems: 'center', borderBottom: '1px solid #f1f5f9' }}>
+                  <img 
+                    src={product.image} 
+                    alt={product.title} 
+                    style={{ width: '100%', height: 'auto', maxHeight: '420px', objectFit: 'contain' }} 
+                  />
+                </div>
+                <div style={{ padding: '24px 28px' }}>
+                  <span style={{ fontSize: '11px', fontWeight: 600, color: 'var(--brand-cyan)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                    {product.subtitle}
+                  </span>
+                  <h2 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--brand-navy-deep)', marginTop: '6px' }}>
+                    {product.title}
+                  </h2>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </main>
+    </>
+  );
+}
