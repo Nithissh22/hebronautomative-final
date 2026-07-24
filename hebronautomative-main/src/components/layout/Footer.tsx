@@ -38,7 +38,7 @@ export default function Footer() {
             <span style={{ color: 'var(--brand-cyan)', fontWeight: 600, fontSize: '10px' }}>01</span> DIE CASTING
           </NavLink>
           <NavLink href="/capabilities?id=cnc-machining" style={{ display: 'flex', gap: '8px', alignItems: 'baseline' }}>
-            <span style={{ color: 'var(--brand-cyan)', fontWeight: 600, fontSize: '10px' }}>02</span> VMC-HAAS USA MACHINING
+            <span style={{ color: 'var(--brand-cyan)', fontWeight: 600, fontSize: '10px' }}>02</span> VMC MACHINES-HAAS USA
           </NavLink>
           <NavLink href="/capabilities?id=powder-coating" style={{ display: 'flex', gap: '8px', alignItems: 'baseline' }}>
             <span style={{ color: 'var(--brand-cyan)', fontWeight: 600, fontSize: '10px' }}>03</span> POWDER COATING

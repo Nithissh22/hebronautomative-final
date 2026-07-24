@@ -52,7 +52,7 @@ export default function CapabilitiesOverview() {
           },
           {
             num: '02',
-            title: 'VMC-HAAS USA MACHINING',
+            title: 'VMC MACHINES-HAAS USA',
             id: 'cnc-machining',
             specs: [
               ['Centers', '4th Axis VMC'],

@@ -54,7 +54,7 @@ export const capabilitiesList: CapabilityData[] = [
   {
     id: "cnc-machining",
     number: "02",
-    title: "VMC-HAAS USA MACHINING",
+    title: "VMC MACHINES-HAAS USA",
     powerStatement: "4th axis precision machining for complex automotive geometries",
     imageSrc: "/images/vmc_machine_uploaded.jpg",
     certBadge: "IATF 16949:2016 Certified",
