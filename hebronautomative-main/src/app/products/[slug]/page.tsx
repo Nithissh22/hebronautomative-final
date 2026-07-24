@@ -12,7 +12,6 @@ const PRODUCTS_DB: Record<string, any> = {
     specs: {
       Material: 'ADC12 Aluminium',
       Weight: '248g ± 2g',
-      Tolerance: '±0.01mm',
       Surface: 'Ra 1.6 μm',
       'Tensile Strength': '320 MPa'
     },

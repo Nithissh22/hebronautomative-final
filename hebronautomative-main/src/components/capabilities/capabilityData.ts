@@ -61,7 +61,6 @@ export const capabilitiesList: CapabilityData[] = [
     specs: [
       { icon: "ti-cpu", label: "Type", value: "4th Axis VMC" },
       { icon: "ti-building-factory", label: "Machines", value: "VMC Machines" },
-      { icon: "ti-ruler", label: "Tolerance", value: "±0.01mm" },
       { icon: "ti-atom", label: "Material", value: "ADC12, AC2BF, Aluminium Alloys" }
     ],
     equipmentList: [
