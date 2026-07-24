@@ -24,7 +24,7 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
 
   const carouselImages = Array.from(new Set([
     cap.imageSrc,
-    '/images/toyo_bd330vtex.png',
+    '/images/die-casting-hq.png',
     '/images/standard_room_quality.png',
     '/images/eyelet_assembly_product.png',
     '/images/outer_tube_product.png',

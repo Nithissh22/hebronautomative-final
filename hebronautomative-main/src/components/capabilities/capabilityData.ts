@@ -30,7 +30,7 @@ export const capabilitiesList: CapabilityData[] = [
     number: "01",
     title: "DIE CASTING",
     powerStatement: "Cold chamber HPDC with zero-defect delivery to Tier-1 OEMs",
-    imageSrc: "/images/toyo_bd330vtex.png",
+    imageSrc: "/images/die-casting-hq.png",
     certBadge: "IATF 16949:2016 Certified",
     specs: [
       { icon: "ti-weight", label: "Tonnage", value: "120 - 800" },

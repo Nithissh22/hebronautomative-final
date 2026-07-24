@@ -48,7 +48,7 @@ export default function CapabilitiesOverview() {
               ['Tonnage', '120 - 800'],
               ['Alloys', 'ADC12, AC2BF, Aluminium Alloys'],
             ],
-            image: '/images/toyo_bd330vtex.png',
+            image: '/images/die-casting-hq.png',
           },
           {
             num: '02',
@@ -94,8 +94,8 @@ export default function CapabilitiesOverview() {
                 </div>
               ))}
             </div>
-            <div className="cap-card__image-wrapper" style={{ marginTop: '24px', flex: 1, minHeight: '120px', position: 'relative', borderRadius: '4px', overflow: 'hidden' }}>
-              <img src={cap.image} alt={cap.title} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div className="cap-card__image-wrapper" style={{ marginTop: '24px', flex: 1, minHeight: '120px', position: 'relative', borderRadius: '4px', overflow: 'hidden', backgroundColor: '#ffffff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <img src={cap.image} alt={cap.title} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
             <span className="cap-card__link" style={{ marginTop: '24px' }}>
               {t('viewDetails')}
