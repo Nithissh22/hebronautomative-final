@@ -52,6 +52,9 @@ export default function ProductsPage() {
 
       <main id="main-content" style={{ backgroundColor: '#F8FAFC', padding: '64px 0 120px 0' }}>
         <div className="container">
+          <div style={{ marginBottom: '40px', textAlign: 'center' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: 700, color: 'var(--brand-navy-deep)', display: 'inline-block', borderBottom: '3px solid var(--brand-cyan)', paddingBottom: '12px' }}>ASSEMBLED AND FINISHED PARTS</h2>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))', gap: '32px' }}>
             {PRODUCTS_DATA.map((product) => (
               <div 
