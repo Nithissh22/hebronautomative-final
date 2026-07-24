@@ -12,14 +12,14 @@ interface CapabilityDetailProps {
 
 export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuoteRequest }: CapabilityDetailProps) {
   const cap = capabilitiesList[activeIndex];
-  const [activeTab, setActiveTab] = useState<'equipment' | 'inventory' | 'process'>('equipment');
+  const [activeTab, setActiveTab] = useState<'process'>('process');
   const [prevIndex, setPrevIndex] = useState(activeIndex);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   // Derived state pattern instead of useEffect to avoid cascading render error
   if (activeIndex !== prevIndex) {
     setPrevIndex(activeIndex);
-    setActiveTab('equipment');
+    setActiveTab('process');
   }
 
   const carouselImages = Array.from(new Set([
@@ -156,30 +156,16 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
             )}
           </div>
 
-          <div className="detail-tabs">
-            <button className={`tab-btn ${activeTab === 'equipment' ? 'active' : ''}`} onClick={() => setActiveTab('equipment')}>Equipment</button>
-            <button className={`tab-btn ${activeTab === 'process' ? 'active' : ''}`} onClick={() => setActiveTab('process')}>Process Flow</button>
-          </div>
-
-          <div className="detail-tab-content">
-            {activeTab === 'equipment' && (
-              <ul className="equipment-list-simple">
-                {cap.equipmentList.map((eq, i) => (
-                  <li key={i}>{eq.name} {eq.qty ? <span className="eq-qty">{eq.qty}</span> : null}</li>
-                ))}
-              </ul>
-            )}
-
-            {activeTab === 'process' && (
-              <div className="process-flow-stepper">
-                {cap.processFlow.map((step, i) => (
-                  <div key={i} className="process-step" style={{ animationDelay: `${i * 100}ms` }}>
-                    <div className="process-step-node">{i + 1}</div>
-                    <div className="process-step-label">{step}</div>
-                  </div>
-                ))}
-              </div>
-            )}
+          <div className="detail-tab-content" style={{ marginTop: '32px' }}>
+            <h4 style={{ color: '#fff', fontSize: '18px', marginBottom: '16px', fontWeight: '600' }}>Process Flow</h4>
+            <div className="process-flow-stepper">
+              {cap.processFlow.map((step, i) => (
+                <div key={i} className="process-step" style={{ animationDelay: `${i * 100}ms` }}>
+                  <div className="process-step-node">{i + 1}</div>
+                  <div className="process-step-label">{step}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="detail-trust-points">
