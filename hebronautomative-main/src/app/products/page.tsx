@@ -7,25 +7,25 @@ const PRODUCTS_DATA = [
     slug: 'eyelet-assembly',
     title: 'Eyelet Assembly',
     subtitle: 'PDC PARTS — EYELET ASSEMBLY',
-    image: '/images/eyelet_assembly_product.png',
+    image: '/images/product-eyelet-assembly.png',
   },
   {
     slug: 'spring-seat-adjuster',
     title: 'Spring Seat Adjuster',
     subtitle: 'PDC PARTS — SPRING SEAT ADJUSTER',
-    image: '/images/spring_seat_product.png',
+    image: '/images/product-spring-seat-adjuster.png',
   },
   {
     slug: 'outer-tube',
     title: 'Outer Tube LH & RH',
     subtitle: 'GDC PARTS — FULL FINISHED WITH POWDER COATED PART',
-    image: '/images/outer_tube_product.png',
+    image: '/images/product-outer-tube.png',
   },
   {
     slug: 'shox-parts',
     title: 'Suspension & Shox Parts',
     subtitle: 'SHOCK ABSORBER ASSEMBLY COMPONENTS',
-    image: '/images/our_products_shox.png',
+    image: '/images/product-suspension-shox.png',
   }
 ];
 

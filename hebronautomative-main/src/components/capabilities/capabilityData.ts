@@ -108,7 +108,7 @@ export const capabilitiesList: CapabilityData[] = [
     number: "04",
     title: "SUB-ASSEMBLY",
     powerStatement: "",
-    imageSrc: "/images/eyelet_assembly_product.png",
+    imageSrc: "/images/cap-sub-assembly.png",
     specs: [
       { icon: "ti-settings-2", label: "Method", value: "Torque Verified" }
     ],
@@ -131,7 +131,7 @@ export const capabilitiesList: CapabilityData[] = [
     number: "05",
     title: "QUALITY & INSPECTION",
     powerStatement: "Standard room with full metrology suite — zero escapes policy",
-    imageSrc: "/images/standard_room_quality.png",
+    imageSrc: "/images/cap-quality-inspection.png",
     certBadge: "IATF 16949:2016 Certified",
     specs: [
       { icon: "ti-certificate", label: "Standard", value: "IATF 16949:2016" }
