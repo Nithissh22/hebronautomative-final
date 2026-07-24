@@ -230,3 +230,10 @@
     font-size: 13px;
   }
 }
+
+@media (max-width: 500px) {
+  .point-year:not(.active) {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
