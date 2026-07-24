@@ -51,8 +51,8 @@ export default function CapabilityGrid({ onSelect }: CapabilityGridProps) {
               aria-label={`Explore ${cap.title} capabilities`}
               onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onSelect(index); }}
             >
-              <div className="grid-card__bg">
-                <img src={cap.imageSrc} alt={cap.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div className="grid-card__bg" style={{ backgroundColor: '#ffffff' }}>
+                <img src={cap.imageSrc} alt={cap.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
               </div>
               <div className="grid-card__content">
                 <span className="grid-card__number">{cap.number}</span>
