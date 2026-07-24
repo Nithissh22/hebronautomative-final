@@ -31,6 +31,11 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
   ]));
   const [imgIndex, setImgIndex] = React.useState(0);
 
+  const subAssemblyImages = [
+    '/images/sub_assembly_photoroom_1.png',
+    '/images/sub_assembly_photoroom_2.png',
+  ];
+
   React.useEffect(() => {
     const timer = setInterval(() => {
       setImgIndex((prev) => (prev + 1) % carouselImages.length);
@@ -92,6 +97,30 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
                 </div>
               </div>
             ))}
+            
+            {cap.id === 'sub-assembly' && (
+              <>
+                <style>{`
+                  @keyframes slideVerticalLoop {
+                    0%, 40% { transform: translateY(0); }
+                    50%, 90% { transform: translateY(-33.333%); }
+                    100% { transform: translateY(-66.666%); }
+                  }
+                `}</style>
+                <div className="sub-assembly-slider-wrapper" style={{ overflow: 'hidden', position: 'relative', height: '90px', borderRadius: '10px', background: '#f8fbff', border: '1px solid #eef2f7' }}>
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    animation: 'slideVerticalLoop 4s infinite linear'
+                  }}>
+                    {/* Render original images plus a duplicate of the first one for seamless looping */}
+                    {[...subAssemblyImages, subAssemblyImages[0]].map((src, i) => (
+                      <img key={i} src={src} style={{ width: '100%', height: '90px', objectFit: 'contain', padding: '8px', boxSizing: 'border-box' }} alt={`Sub-assembly part ${i + 1}`} />
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
           </div>
 
           <div className="detail-tabs">

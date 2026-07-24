@@ -59,7 +59,7 @@ export const capabilitiesList: CapabilityData[] = [
     imageSrc: "/images/vmc_machine_uploaded.jpg",
     certBadge: "IATF 16949:2016 Certified",
     specs: [
-      { icon: "ti-cpu", label: "Type", value: "4th Axis CNC" },
+      { icon: "ti-cpu", label: "Type", value: "4th Axis VMC" },
       { icon: "ti-building-factory", label: "Machines", value: "VMC Machines" },
       { icon: "ti-ruler", label: "Tolerance", value: "±0.01mm" },
       { icon: "ti-atom", label: "Material", value: "ADC12, AC2BF, Aluminium Alloys" }

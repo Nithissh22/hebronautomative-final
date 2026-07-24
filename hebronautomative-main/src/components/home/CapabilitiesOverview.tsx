@@ -55,7 +55,7 @@ export default function CapabilitiesOverview() {
             title: 'VMC MACHINING AS USA',
             id: 'cnc-machining',
             specs: [
-              ['Centers', '4th Axis CNC'],
+              ['Centers', '4th Axis VMC'],
               ['Make', 'HAAS USA'],
             ],
             image: '/images/vmc_machine_uploaded.jpg',

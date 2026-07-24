@@ -34,7 +34,6 @@ export default function QualityStrip() {
               <p><strong>Issue Date:</strong> 16.11.2021</p>
               <p><strong>Valid Until:</strong> 15.11.2026</p>
               <p><strong>Certificate No:</strong> ISO 9001:2015</p>
-              <a href="#">Download Certificate →</a>
             </div>
             <div className="qual-cert">
               <h4>IATF 16949:2016</h4>
