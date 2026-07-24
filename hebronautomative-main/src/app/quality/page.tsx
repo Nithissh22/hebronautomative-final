@@ -45,7 +45,7 @@ export default function QualityPage() {
           <div className="eyebrow hero-tech-label">
             QUALITY ASSURANCE SYSTEM
           </div>
-          <h1 className="hero-serif-title">Quality<br />System</h1>
+          <h1 className="hero-serif-title">Quality System</h1>
           <p className="quality-hero__subtitle">
             Zero-defect manufacturing through process control, in-line inspection, 
             and documented traceability at every stage of production.
