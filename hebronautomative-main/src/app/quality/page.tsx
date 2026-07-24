@@ -42,47 +42,23 @@ export default function QualityPage() {
             {/* SECTION 2: Certifications */}
             <section className="certifications-section">
               <h2 className="eyebrow section-header text-center">{t('certifications')}</h2>
-              <div className="certifications-grid">
-
-                <div className="new-cert-card">
-                  <div className="cert-header">
-                    <h3 className="cert-title">ISO 9001:2015</h3>
+              <div className="certifications-grid" style={{ display: 'flex', width: '100%' }}>
+                <div className="new-cert-card" style={{ display: 'flex', flexDirection: 'row', width: '100%', alignItems: 'center', gap: '48px', padding: '48px', background: '#fff', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
+                  <div style={{ flex: '1' }}>
+                    <div className="cert-header">
+                      <h3 className="cert-title" style={{ fontSize: '32px', marginBottom: '32px', color: '#09122c' }}>IATF 16949:2016</h3>
+                    </div>
+                    <div className="cert-body">
+                      <div className="cert-row" style={{ fontSize: '16px', marginBottom: '16px' }}><span className="cert-lbl">{t('issuingBody')}</span> OST Scenes</div>
+                      <div className="cert-row" style={{ fontSize: '16px', marginBottom: '16px' }}><span className="cert-lbl">{t('issueDate')}</span> 16.11.2026</div>
+                      <div className="cert-row" style={{ fontSize: '16px', marginBottom: '16px' }}><span className="cert-lbl">{t('validUntil')}</span> 11.11.2021</div>
+                      <div className="cert-row" style={{ fontSize: '16px', marginBottom: '16px' }}><span className="cert-lbl">{t('certNo')}</span> IATF 16949:2016</div>
+                    </div>
                   </div>
-                  <div className="cert-body">
-                    <div className="cert-row"><span className="cert-lbl">{t('issuingBody')}</span> CBF</div>
-                    <div className="cert-row"><span className="cert-lbl">{t('issueDate')}</span> 16.11.2026</div>
-                    <div className="cert-row"><span className="cert-lbl">{t('validUntil')}</span> 11.11.2021</div>
-                    <div className="cert-row"><span className="cert-lbl">{t('certNo')}</span> ISO 9001:2015</div>
-                  </div>
-                </div>
-
-                <div className="new-cert-card">
-                  <div className="cert-header">
-                    <h3 className="cert-title">IATF 16949:2016</h3>
-                  </div>
-                  <div style={{ width: '100%', marginBottom: '24px' }}>
-                    <Image src="/images/IATF.png" alt="IATF 16949:2016 Certificate" width={400} height={560} style={{ width: '100%', height: 'auto', border: '1px solid #e2e8f0', borderRadius: '4px' }} />
-                  </div>
-                  <div className="cert-body">
-                    <div className="cert-row"><span className="cert-lbl">{t('issuingBody')}</span> OST Scenes</div>
-                    <div className="cert-row"><span className="cert-lbl">{t('issueDate')}</span> 16.11.2026</div>
-                    <div className="cert-row"><span className="cert-lbl">{t('validUntil')}</span> 11.11.2021</div>
-                    <div className="cert-row"><span className="cert-lbl">{t('certNo')}</span> IATF 16949:2016</div>
+                  <div style={{ flex: '1', display: 'flex', justifyContent: 'center' }}>
+                    <Image src="/images/IATF.png" alt="IATF 16949:2016 Certificate" width={500} height={700} style={{ width: '100%', maxWidth: '400px', height: 'auto', border: '1px solid #e2e8f0', borderRadius: '8px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }} />
                   </div>
                 </div>
-
-                <div className="new-cert-card">
-                  <div className="cert-header">
-                    <h3 className="cert-title">ISO 14001:2015</h3>
-                  </div>
-                  <div className="cert-body">
-                    <div className="cert-row"><span className="cert-lbl">{t('issuingBody')}</span> CDF Scenes</div>
-                    <div className="cert-row"><span className="cert-lbl">{t('issueDate')}</span> 16.11.2026</div>
-                    <div className="cert-row"><span className="cert-lbl">{t('validUntil')}</span> 11.11.2021</div>
-                    <div className="cert-row"><span className="cert-lbl">{t('certNo')}</span> ISO 14001:2015</div>
-                  </div>
-                </div>
-
               </div>
             </section>
 
