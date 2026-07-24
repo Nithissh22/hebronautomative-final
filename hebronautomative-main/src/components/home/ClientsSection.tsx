@@ -6,13 +6,14 @@ import './ClientsSection.css';
 
 export default function ClientsSection() {
   const t = useTranslation('clients');
+  const tCommon = useTranslation('common');
   return (
     <section className="clients-sec">
       <div className="container">
         <div className="clients-sec__header">
-          <span className="eyebrow">{t('eyebrow')}</span>
+          <span className="eyebrow">{tCommon('trustedByOem') || t('eyebrow')}</span>
           <h2 className="section-heading">
-            {t('title')}
+            {tCommon('approvedEndCust') || t('title')}
           </h2>
           <div className="heading-rule" />
         </div>

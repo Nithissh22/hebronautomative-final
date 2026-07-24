@@ -8,13 +8,14 @@ import './CapabilitiesOverview.css';
 
 export default function CapabilitiesOverview() {
   const t = useTranslation('capabilities');
+  const tCommon = useTranslation('common');
   return (
     <section className="cap-overview">
       <div className="cap-overview__videos-container">
         {/* VIDEO 1 */}
         <div className="cap-video-container" style={{ display: 'flex', flexDirection: 'column', height: 'auto', minHeight: 'auto', padding: '60px 20px', gap: '30px', background: '#0e1a5c' }}>
           <h2 className="cap-video-heading" style={{ position: 'relative', zIndex: 3, margin: 0, color: '#fff' }}>
-            Toyo Die Casting Machine
+            {tCommon('toyoMachine') || 'Toyo Die Casting Machine'}
           </h2>
           <div style={{ position: 'relative', width: '100%', maxWidth: '1200px', margin: '0 auto', aspectRatio: '16/9', borderRadius: '12px', overflow: 'hidden' }}>
             <video 
@@ -45,8 +46,8 @@ export default function CapabilitiesOverview() {
             title: t('hpdc'),
             id: 'die-casting',
             specs: [
-              ['Tonnage', '120 - 800'],
-              ['Alloys', 'ADC12, AC2BF, Aluminium Alloys'],
+              [tCommon('tonnage') || 'Tonnage', '120 - 800'],
+              [tCommon('alloys') || 'Alloys', 'ADC12, AC2BF, Aluminium Alloys'],
             ],
             image: '/images/die-casting-hq.png',
           },
@@ -55,8 +56,8 @@ export default function CapabilitiesOverview() {
             title: 'VMC MACHINES-HAAS USA',
             id: 'cnc-machining',
             specs: [
-              ['Centers', '4th Axis VMC'],
-              ['Make', 'HAAS USA'],
+              [tCommon('centers') || 'Centers', '4th Axis VMC'],
+              [tCommon('make') || 'Make', 'HAAS USA'],
             ],
             image: '/images/vmc_machine_uploaded.jpg',
           },
@@ -65,8 +66,8 @@ export default function CapabilitiesOverview() {
             title: t('gdc'),
             id: 'die-casting',
             specs: [
-              ['GDC Units', '7 Machines'],
-              ['Furnaces', '3 Melting + 1 Holding'],
+              [tCommon('gdcUnits') || 'GDC Units', '7 Machines'],
+              [tCommon('furnaces') || 'Furnaces', '3 Melting + 1 Holding'],
             ],
             image: '/images/gdc_machine_uploaded.jpg',
           },
@@ -75,8 +76,8 @@ export default function CapabilitiesOverview() {
             title: t('powder'),
             id: 'powder-coating',
             specs: [
-              ['Lines', '2 Semi-Auto Lines'],
-              ['Testing', 'DFT Meter Lab'],
+              [tCommon('lines') || 'Lines', '2 Semi-Auto Lines'],
+              [tCommon('testing') || 'Testing', 'DFT Meter Lab'],
             ],
             image: '/images/powder_cap_uploaded.jpg',
           },
