@@ -7,7 +7,6 @@ import './GallerySection.css';
 
 const images = [
   { src: '/images/toyo_bd330vtex.png', name: 'TOYO BD-330VTEX Die Casting Machine' },
-  { src: '/assets/Hebron_Automotive_Facility_2.jpg', name: 'Finished Components' },
   { src: '/assets/Hebron_Automotive_Facility_4.jpg', name: 'Universal Testing Machine' },
   { src: '/assets/Hebron_Automotive_Facility_9.jpg', name: 'Die Casting Machine' },
   { src: '/assets/Hebron_Automotive_Facility_10.jpg', name: 'Gravity Die Casting' },

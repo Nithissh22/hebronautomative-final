@@ -83,12 +83,10 @@ export default function QualityPage() {
                 {/* Column 1: Slides Up */}
                 <div className="gallery-col col-up">
                   <div className="gallery-track-up">
-                    <img src="/assets/Hebron_Automotive_Facility_2.jpg" alt="Finished Components" />
                     <img src="/assets/Hebron_Automotive_Facility_10.jpg" alt="Gravity Die Casting" />
                     <img src="/assets/Hebron_Automotive_Facility_16.jpg" alt="Quality Inspection Lab" />
                     <img src="/images/toyo_bd330vtex.png" alt="Toyo Machine" />
                     {/* Duplicate for infinite loop */}
-                    <img src="/assets/Hebron_Automotive_Facility_2.jpg" alt="Finished Components" />
                     <img src="/assets/Hebron_Automotive_Facility_10.jpg" alt="Gravity Die Casting" />
                     <img src="/assets/Hebron_Automotive_Facility_16.jpg" alt="Quality Inspection Lab" />
                     <img src="/images/toyo_bd330vtex.png" alt="Toyo Machine" />
