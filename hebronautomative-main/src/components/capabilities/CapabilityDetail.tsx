@@ -70,7 +70,7 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
               className="detail-media-video" 
               style={{ 
                 position: 'absolute', top: 0, left: 0, 
-                width: '100%', height: '100%', objectFit: 'cover',
+                width: '100%', height: '100%', objectFit: 'contain', backgroundColor: '#ffffff',
                 opacity: imgIndex === i ? 1 : 0, transition: 'opacity 1s ease-in-out'
               }} 
             />
