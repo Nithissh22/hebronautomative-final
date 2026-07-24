@@ -24,11 +24,11 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
 
   const carouselImages = Array.from(new Set([
     cap.imageSrc,
-    '/images/die-casting-hq.png',
-    '/images/standard_room_quality.png',
-    '/images/eyelet_assembly_product.png',
-    '/images/outer_tube_product.png',
-    '/images/spring_seat_product.png',
+    '/images/carousel_1.png',
+    '/images/carousel_2.png',
+    '/images/carousel_3.png',
+    '/images/carousel_4.png',
+    '/images/carousel_5.png',
   ]));
   const [imgIndex, setImgIndex] = React.useState(0);
 
