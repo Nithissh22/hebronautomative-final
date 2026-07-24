@@ -34,7 +34,7 @@ export default function QualityStrip() {
               <p><strong>Issue Date:</strong> 16.11.2021</p>
               <p><strong>Valid Until:</strong> 15.11.2026</p>
               <p><strong>Certificate No:</strong> ISO 9001:2015</p>
-              <a href="/cert-iso.pdf" download className="cert-strip-btn">Download Certificate &rarr;</a>
+              <a href="/cert-iso.pdf" target="_blank" rel="noopener noreferrer" className="cert-strip-btn">View Certificate &rarr;</a>
             </div>
             <div className="qual-cert">
               <h4>IATF 16949:2016</h4>
@@ -50,7 +50,7 @@ export default function QualityStrip() {
               <p><strong>Issue Date:</strong> 16.11.2021</p>
               <p><strong>Valid Until:</strong> 15.11.2026</p>
               <p><strong>Certificate No:</strong> ISO 14001:2015</p>
-              <a href="/cert-iso14001.pdf" download className="cert-strip-btn">Download Certificate &rarr;</a>
+              <a href="/cert-iso14001.pdf" target="_blank" rel="noopener noreferrer" className="cert-strip-btn">View Certificate &rarr;</a>
             </div>
           </div>
         </div>

@@ -75,7 +75,7 @@ export default function QualityPage() {
                     <div className="cert-row"><span className="cert-lbl">Valid Until:</span> 11.11.2021</div>
                     <div className="cert-row"><span className="cert-lbl">Certificate No.</span> ISO 9001:2015</div>
                   </div>
-                  <a href="/cert-iso.pdf" className="cert-btn">Download Certificate &rarr;</a>
+                  <a href="/cert-iso.pdf" target="_blank" rel="noopener noreferrer" className="cert-btn">View Certificate &rarr;</a>
                 </div>
 
                 <div className="new-cert-card">
@@ -104,7 +104,7 @@ export default function QualityPage() {
                     <div className="cert-row"><span className="cert-lbl">Valid Until:</span> 11.11.2021</div>
                     <div className="cert-row"><span className="cert-lbl">Certificate No.</span> ISO 14001:2015</div>
                   </div>
-                  <a href="/cert-iso14001.pdf" className="cert-btn">Download Certificate &rarr;</a>
+                  <a href="/cert-iso14001.pdf" target="_blank" rel="noopener noreferrer" className="cert-btn">View Certificate &rarr;</a>
                 </div>
 
               </div>
