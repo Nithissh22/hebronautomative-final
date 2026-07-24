@@ -99,31 +99,7 @@ export default function CustomersShowcase() {
         </div>
 
         <div className="showcase-cards">
-          <div className={`sc-card c-gabriel ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '0.4s' }}>
-            <div className="sc-glow"></div>
-            <div className="sc-content">
-              <div className="sc-logo-area logo-wrapper">
-                <img src="/assets/Gabriel_v2.png" alt="Gabriel" />
-              </div>
-              <h3 className="sc-name">Gabriel India Limited</h3>
-              <span className="sc-tag">Suspension Systems</span>
-              <p className="sc-plants">Hosur Main Plant &middot; Hosur Satellite &middot; Parwanoo</p>
-            </div>
-          </div>
-
-          <div className={`sc-card c-ather ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '0.5s' }}>
-            <div className="sc-glow"></div>
-            <div className="sc-content">
-              <div className="sc-logo-area logo-wrapper">
-                <img src="/assets/Ather_Energy_v2.png" alt="Ather" />
-              </div>
-              <h3 className="sc-name">Ather Energy</h3>
-              <span className="sc-tag">EV Components</span>
-              <p className="sc-plants">Electric Vehicle Precision Components</p>
-            </div>
-          </div>
-
-          <div className={`sc-card c-tvs ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '0.6s' }}>
+          <div className={`sc-card c-tvs ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '0.4s' }}>
             <div className="sc-glow"></div>
             <div className="sc-content">
               <div className="sc-logo-area logo-wrapper">
@@ -135,7 +111,7 @@ export default function CustomersShowcase() {
             </div>
           </div>
 
-          <div className={`sc-card c-honda ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '0.7s' }}>
+          <div className={`sc-card c-honda ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '0.5s' }}>
             <div className="sc-glow"></div>
             <div className="sc-content">
               <div className="sc-logo-area logo-wrapper">
@@ -147,7 +123,7 @@ export default function CustomersShowcase() {
             </div>
           </div>
 
-          <div className={`sc-card c-royal ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '0.8s' }}>
+          <div className={`sc-card c-royal ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '0.6s' }}>
             <div className="sc-glow"></div>
             <div className="sc-content">
               <div className="sc-logo-area logo-wrapper">
@@ -159,7 +135,7 @@ export default function CustomersShowcase() {
             </div>
           </div>
 
-          <div className={`sc-card c-mahindra ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '0.9s' }}>
+          <div className={`sc-card c-mahindra ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '0.7s' }}>
             <div className="sc-glow"></div>
             <div className="sc-content">
               <div className="sc-logo-area logo-wrapper">
@@ -171,31 +147,7 @@ export default function CustomersShowcase() {
             </div>
           </div>
 
-          <div className={`sc-card c-yamaha ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '1.0s' }}>
-            <div className="sc-glow"></div>
-            <div className="sc-content">
-              <div className="sc-logo-area logo-wrapper">
-                <img src="/assets/Yamaha_v2.png" alt="Yamaha" />
-              </div>
-              <h3 className="sc-name">Yamaha</h3>
-              <span className="sc-tag">2W Components</span>
-              <p className="sc-plants">Precision Aluminium Die Casting</p>
-            </div>
-          </div>
-
-          <div className={`sc-card c-jawa ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '1.1s' }}>
-            <div className="sc-glow"></div>
-            <div className="sc-content">
-              <div className="sc-logo-area logo-wrapper">
-                <img src="/assets/Jawa_Motorcycles_v2.png" alt="Jawa Motorcycles" />
-              </div>
-              <h3 className="sc-name">Jawa Motorcycles</h3>
-              <span className="sc-tag">2W Components</span>
-              <p className="sc-plants">Precision Aluminium Die Casting</p>
-            </div>
-          </div>
-
-          <div className={`sc-card c-ola ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '1.2s' }}>
+          <div className={`sc-card c-ola ${isVisible ? 'animate' : ''}`} style={{ animationDelay: '0.8s' }}>
             <div className="sc-glow"></div>
             <div className="sc-content">
               <div className="sc-logo-area logo-wrapper">
