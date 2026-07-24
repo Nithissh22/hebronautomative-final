@@ -22,8 +22,9 @@ const PRODUCTS_DB: Record<string, any> = {
   // Add fallback for others for simplicity in this MVP
 };
 
-export default function ProductDetail({ params }: { params: { slug: string } }) {
-  const prod = PRODUCTS_DB[params.slug] || PRODUCTS_DB['eyelet-assy'];
+export default async function ProductDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const prod = PRODUCTS_DB[slug] || PRODUCTS_DB['eyelet-assy'];
 
   return (
     <>

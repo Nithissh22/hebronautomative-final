@@ -36,6 +36,11 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
     apple: "/apple-touch-icon.png",
   },
+  appleWebApp: {
+    capable: true,
+    title: "Hebron",
+    statusBarStyle: "black-translucent",
+  },
 };
 
 import { TransitionProvider } from "@/context/TransitionContext";
