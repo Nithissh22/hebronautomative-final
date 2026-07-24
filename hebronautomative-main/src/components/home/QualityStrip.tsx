@@ -25,23 +25,21 @@ export default function QualityStrip() {
             </div>
           </div>
           
-          <div className="qual-certs">
-            <div className="qual-cert-responsive">
-              <div className="qual-cert-text">
-                <h4>IATF 16949:2016</h4>
-                <p><strong>Issuing Body:</strong> TÜV Rheinland</p>
-                <p><strong>Issue Date:</strong> 2024-11-12</p>
-                <p><strong>Valid Until:</strong> 2027-11-11</p>
-                <p><strong>Certificate No:</strong> 01 111 2436343</p>
-              </div>
-              <div className="qual-cert-image">
-                <img 
-                  src="/images/iatf_cert_uploaded.jpg" 
-                  alt="IATF 16949:2016 Certificate" 
-                  className="cert-img-hover"
-                  onClick={() => setSelectedImage('/images/iatf_cert_uploaded.jpg')}
-                />
-              </div>
+          <div className="qual-cert-responsive">
+            <div className="qual-cert-text">
+              <h4>IATF 16949:2016</h4>
+              <p><strong>Issuing Body:</strong> TÜV Rheinland</p>
+              <p><strong>Issue Date:</strong> 2024-11-12</p>
+              <p><strong>Valid Until:</strong> 2027-11-11</p>
+              <p><strong>Certificate No:</strong> 01 111 2436343</p>
+            </div>
+            <div className="qual-cert-image">
+              <img 
+                src="/images/iatf_cert_uploaded.jpg" 
+                alt="IATF 16949:2016 Certificate" 
+                className="cert-img-hover"
+                onClick={() => setSelectedImage('/images/iatf_cert_uploaded.jpg')}
+              />
             </div>
           </div>
         </div>
