@@ -5,24 +5,23 @@ import './QualityStrip.css';
 
 export default function QualityStrip() {
   const t = useTranslation('qualityStrip');
-  const tCommon = useTranslation('common');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   return (
     <section className="qual-strip">
       <div className="container qual-strip__inner">
         <div className="qual-strip__content">
-          <span className="eyebrow" style={{ textTransform: 'uppercase' }}>{tCommon('qaTitle') || t('assurance')}</span>
-          <h2 className="section-heading">{tCommon('zeroDefectGoal') || t('zeroDefect')}</h2>
+          <span className="eyebrow" style={{ textTransform: 'uppercase' }}>{t('assurance')}</span>
+          <h2 className="section-heading">{t('zeroDefect')}</h2>
         </div>
         <div className="qual-strip__right" style={{ display: 'flex', flexDirection: 'column', gap: '48px', width: '100%' }}>
           <div className="qual-strip__stats">
             <div className="qual-stat">
               <span className="qual-stat__val">1.67+</span>
-              <span className="qual-stat__lbl" style={{ textTransform: 'uppercase' }}>{tCommon('cpkTarget') || t('cpkTarget')}</span>
+              <span className="qual-stat__lbl" style={{ textTransform: 'uppercase' }}>{t('cpkTarget')}</span>
             </div>
             <div className="qual-stat">
               <span className="qual-stat__val">100%</span>
-              <span className="qual-stat__lbl" style={{ textTransform: 'uppercase' }}>{tCommon('traceability100') || t('traceability')}</span>
+              <span className="qual-stat__lbl" style={{ textTransform: 'uppercase' }}>{t('traceability')}</span>
             </div>
           </div>
           
@@ -30,15 +29,15 @@ export default function QualityStrip() {
             <div className="qual-cert-responsive">
               <div className="qual-cert-text">
                 <h4>IATF 16949:2016</h4>
-                <p><strong>{tCommon('issuingBody') || 'Issuing Body'}:</strong> TÜV Rheinland</p>
-                <p><strong>{tCommon('issueDate') || 'Issue Date'}:</strong> 2024-11-12</p>
-                <p><strong>{tCommon('validUntil') || 'Valid Until'}:</strong> 2027-11-11</p>
-                <p><strong>{tCommon('certNo') || 'Certificate No'}:</strong> 01 111 2436343</p>
+                <p><strong>Issuing Body:</strong> TÜV Rheinland</p>
+                <p><strong>Issue Date:</strong> 2024-11-12</p>
+                <p><strong>Valid Until:</strong> 2027-11-11</p>
+                <p><strong>Certificate No:</strong> 01 111 2436343</p>
               </div>
               <div className="qual-cert-image">
                 <img 
                   src="/images/iatf_cert_uploaded.jpg" 
-                  alt={tCommon('iatfCertTitle') || "IATF 16949:2016 Certificate"} 
+                  alt="IATF 16949:2016 Certificate" 
                   className="cert-img-hover"
                   onClick={() => setSelectedImage('/images/iatf_cert_uploaded.jpg')}
                 />

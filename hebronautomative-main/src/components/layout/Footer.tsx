@@ -7,7 +7,6 @@ import './Footer.css';
 
 export default function Footer() {
   const t = useTranslation('footer');
-  const tCommon = useTranslation('common');
   return (
     <footer className="footer">
       <div className="container footer__grid">
@@ -15,10 +14,10 @@ export default function Footer() {
         <div className="footer__col footer__col--brand">
           <div className="footer__logo-wrapper">
             <img src="/images/hebron-logo_v2.png" alt="Hebron Automotive" className="footer__logo" />
-            <span className="footer__logo-text">{tCommon('companyNameFull') || 'HEBRON AUTOMOTIVE PRODUCTS PVT.LTD'}</span>
+            <span className="footer__logo-text">HEBRON AUTOMOTIVE PRODUCTS PVT.LTD</span>
           </div>
           <p className="footer__text">
-            {tCommon('precisionFooter') || t('desc')}
+            {t('desc')}
           </p>
           <div className="footer__map-container">
             <iframe 
