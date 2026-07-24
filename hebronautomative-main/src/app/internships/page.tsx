@@ -154,8 +154,18 @@ export default function InternshipsPage() {
     formData.append("subject", "New Internship Application from Website");
     formData.append("from_name", "Hebron Automotive Website");
 
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
     try {
-      const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
+      const response = await fetch("https://api.web3forms.com/submit", { 
+        method: "POST", 
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json 
+      });
       if (response.ok) {
         setIsSuccess(true);
         e.currentTarget.reset();
