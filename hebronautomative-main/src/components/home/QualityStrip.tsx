@@ -30,11 +30,11 @@ export default function QualityStrip() {
           <div className="qual-certs">
             <div className="qual-cert">
               <h4>ISO 9001:2015</h4>
-              <p><strong>Issuing Body:</strong> CBF</p>
-              <p><strong>Issue Date:</strong> 16.11.2021</p>
-              <p><strong>Valid Until:</strong> 15.11.2026</p>
-              <p><strong>Certificate No:</strong> ISO 9001:2015</p>
-              <a href="/cert-iso.pdf" target="_blank" rel="noopener noreferrer" className="cert-strip-btn">View Certificate &rarr;</a>
+              <p><strong>{t('issuingBody')}</strong> CBF</p>
+              <p><strong>{t('issueDate')}</strong> 16.11.2021</p>
+              <p><strong>{t('validUntil')}</strong> 15.11.2026</p>
+              <p><strong>{t('certNo')}</strong> ISO 9001:2015</p>
+              <a href="/cert-iso.pdf" target="_blank" rel="noopener noreferrer" className="cert-strip-btn">{t('viewCert')}</a>
             </div>
             <div className="qual-cert">
               <h4>IATF 16949:2016</h4>
@@ -46,11 +46,11 @@ export default function QualityStrip() {
             </div>
             <div className="qual-cert">
               <h4>ISO 14001:2015</h4>
-              <p><strong>Issuing Body:</strong> CDF Scenes</p>
-              <p><strong>Issue Date:</strong> 16.11.2021</p>
-              <p><strong>Valid Until:</strong> 15.11.2026</p>
-              <p><strong>Certificate No:</strong> ISO 14001:2015</p>
-              <a href="/cert-iso14001.pdf" target="_blank" rel="noopener noreferrer" className="cert-strip-btn">View Certificate &rarr;</a>
+              <p><strong>{t('issuingBody')}</strong> CDF Scenes</p>
+              <p><strong>{t('issueDate')}</strong> 16.11.2021</p>
+              <p><strong>{t('validUntil')}</strong> 15.11.2026</p>
+              <p><strong>{t('certNo')}</strong> ISO 14001:2015</p>
+              <a href="/cert-iso14001.pdf" target="_blank" rel="noopener noreferrer" className="cert-strip-btn">{t('viewCert')}</a>
             </div>
           </div>
         </div>

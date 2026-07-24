@@ -1,57 +1,36 @@
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Navbar from '@/components/layout/Navbar';
+import { useTranslation } from '@/i18n/LanguageContext';
 import './quality.css';
 
-const EQUIPMENT_DATA = {
-  DIMENSIONAL: [
-    { name: 'VMM', cap: '136×56.10mm', cov: '5 Coverage' },
-    { name: '2D Height Master', cap: '500×22.5um', cov: '1.50~160mm' },
-    { name: 'CPCustom Coating Facilitator', cap: '1.50~15.50um', cov: 'Coverage' },
-  ],
-  MECHANICAL: [
-    { name: 'Auto Universal Testing Machine', cap: 'Mechanical property testing', cov: 'Per heat lot' },
-  ],
-  'MATERIAL ANALYSIS': [
-    { name: 'Spectrometer (Spectro Analysis)', cap: 'Alloy composition verification', cov: 'Per melt' },
-  ],
-  'SURFACE FINISH': [
-    { name: 'Roughness Tester (Ra)', cap: 'Surface finish measurement', cov: 'Per batch' },
-  ],
-  COATING: [
-    { name: 'Powder Coating DFT Meter', cap: 'Coating thickness verification', cov: 'Every run' },
-    { name: 'Salt Spray Test (SST) Chamber', cap: 'Corrosion resistance testing', cov: 'Validation' },
-  ]
-};
-
 export default function QualityPage() {
-  const [activeTab, setActiveTab] = useState('DIMENSIONAL');
-  
+  const t = useTranslation('quality');
+
   return (
     <>
       <Navbar />
-      
+
       {/* SECTION 1: Hero */}
       <section className="quality-hero">
-        <img 
-          src="/images/quality-system-bg.png" 
-          alt="Quality System Background" 
-          className="quality-hero__bg" 
+        <img
+          src="/images/quality-system-bg.png"
+          alt="Quality System Background"
+          className="quality-hero__bg"
         />
         <div className="quality-hero__overlay"></div>
-        
+
         <div className="container quality-hero__content">
           <div className="eyebrow hero-tech-label">
-            QUALITY ASSURANCE SYSTEM
+            {t('heroEyebrow')}
           </div>
-          <h1 className="hero-serif-title">Quality System</h1>
+          <h1 className="hero-serif-title">{t('heroTitle')}</h1>
           <p className="quality-hero__subtitle">
-            Zero-defect manufacturing through process control, in-line inspection, 
-            and documented traceability at every stage of production.
+            {t('heroSubtitle')}
           </p>
           <div className="quality-hero__standards">
-            ISO 9001:2015 · IATF 16949:2016 · PPAP LEVEL 3 CAPABLE
+            {t('heroStandards')}
           </div>
         </div>
       </section>
@@ -59,23 +38,23 @@ export default function QualityPage() {
       <main id="main-content" style={{ paddingBottom: '0', backgroundColor: '#F8FAFC' }}>
         <div className="container">
           <div className="quality-sections">
-            
+
             {/* SECTION 2: Certifications */}
             <section className="certifications-section">
-              <h2 className="eyebrow section-header text-center">Certifications</h2>
+              <h2 className="eyebrow section-header text-center">{t('certifications')}</h2>
               <div className="certifications-grid">
-                
+
                 <div className="new-cert-card">
                   <div className="cert-header">
                     <h3 className="cert-title">ISO 9001:2015</h3>
                   </div>
                   <div className="cert-body">
-                    <div className="cert-row"><span className="cert-lbl">Issuing Body:</span> CBF</div>
-                    <div className="cert-row"><span className="cert-lbl">Issue Date:</span> 16.11.2026</div>
-                    <div className="cert-row"><span className="cert-lbl">Valid Until:</span> 11.11.2021</div>
-                    <div className="cert-row"><span className="cert-lbl">Certificate No.</span> ISO 9001:2015</div>
+                    <div className="cert-row"><span className="cert-lbl">{t('issuingBody')}</span> CBF</div>
+                    <div className="cert-row"><span className="cert-lbl">{t('issueDate')}</span> 16.11.2026</div>
+                    <div className="cert-row"><span className="cert-lbl">{t('validUntil')}</span> 11.11.2021</div>
+                    <div className="cert-row"><span className="cert-lbl">{t('certNo')}</span> ISO 9001:2015</div>
                   </div>
-                  <a href="/cert-iso.pdf" target="_blank" rel="noopener noreferrer" className="cert-btn">View Certificate &rarr;</a>
+                  <a href="/cert-iso.pdf" target="_blank" rel="noopener noreferrer" className="cert-btn">{t('viewCert')}</a>
                 </div>
 
                 <div className="new-cert-card">
@@ -86,12 +65,12 @@ export default function QualityPage() {
                     <Image src="/images/IATF.png" alt="IATF 16949:2016 Certificate" width={400} height={560} style={{ width: '100%', height: 'auto', border: '1px solid #e2e8f0', borderRadius: '4px' }} />
                   </div>
                   <div className="cert-body">
-                    <div className="cert-row"><span className="cert-lbl">Issuing Body:</span> OST Scenes</div>
-                    <div className="cert-row"><span className="cert-lbl">Issue Date:</span> 16.11.2026</div>
-                    <div className="cert-row"><span className="cert-lbl">Valid Until:</span> 11.11.2021</div>
-                    <div className="cert-row"><span className="cert-lbl">Certificate No.</span> IATF 16949:2016</div>
+                    <div className="cert-row"><span className="cert-lbl">{t('issuingBody')}</span> OST Scenes</div>
+                    <div className="cert-row"><span className="cert-lbl">{t('issueDate')}</span> 16.11.2026</div>
+                    <div className="cert-row"><span className="cert-lbl">{t('validUntil')}</span> 11.11.2021</div>
+                    <div className="cert-row"><span className="cert-lbl">{t('certNo')}</span> IATF 16949:2016</div>
                   </div>
-                  <a href="/images/IATF.png" target="_blank" rel="noopener noreferrer" className="cert-btn">View Certificate &rarr;</a>
+                  <a href="/images/IATF.png" target="_blank" rel="noopener noreferrer" className="cert-btn">{t('viewCert')}</a>
                 </div>
 
                 <div className="new-cert-card">
@@ -99,12 +78,12 @@ export default function QualityPage() {
                     <h3 className="cert-title">ISO 14001:2015</h3>
                   </div>
                   <div className="cert-body">
-                    <div className="cert-row"><span className="cert-lbl">Issuing Body:</span> CDF Scenes</div>
-                    <div className="cert-row"><span className="cert-lbl">Issue Date:</span> 16.11.2026</div>
-                    <div className="cert-row"><span className="cert-lbl">Valid Until:</span> 11.11.2021</div>
-                    <div className="cert-row"><span className="cert-lbl">Certificate No.</span> ISO 14001:2015</div>
+                    <div className="cert-row"><span className="cert-lbl">{t('issuingBody')}</span> CDF Scenes</div>
+                    <div className="cert-row"><span className="cert-lbl">{t('issueDate')}</span> 16.11.2026</div>
+                    <div className="cert-row"><span className="cert-lbl">{t('validUntil')}</span> 11.11.2021</div>
+                    <div className="cert-row"><span className="cert-lbl">{t('certNo')}</span> ISO 14001:2015</div>
                   </div>
-                  <a href="/cert-iso14001.pdf" target="_blank" rel="noopener noreferrer" className="cert-btn">View Certificate &rarr;</a>
+                  <a href="/cert-iso14001.pdf" target="_blank" rel="noopener noreferrer" className="cert-btn">{t('viewCert')}</a>
                 </div>
 
               </div>
@@ -113,12 +92,12 @@ export default function QualityPage() {
             {/* Animated Quality Gallery */}
             <section className="quality-animated-gallery">
               <div className="quality-gallery-header">
-                <h2 className="eyebrow section-header text-center">Facility Showcase</h2>
+                <h2 className="eyebrow section-header text-center">{t('facilityShowcase')}</h2>
                 <p className="text-center" style={{ color: '#64748b', marginBottom: '48px' }}>
-                  A glimpse into our state-of-the-art manufacturing and inspection capabilities.
+                  {t('facilityDesc')}
                 </p>
               </div>
-              
+
               <div className="quality-gallery-container">
                 {/* Column 1: Slides Up */}
                 <div className="gallery-col col-up">

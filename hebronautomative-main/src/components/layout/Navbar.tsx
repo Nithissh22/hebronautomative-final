@@ -163,7 +163,7 @@ const Navbar: FC<NavbarProps> = ({ theme }) => {
         </div>
 
         <NavLink href="/contact" className="nav__cta">
-          Enquiry
+          {t('nav', 'requestQuote')}
           <span className="nav__cta-arrow">→</span>
         </NavLink>
 

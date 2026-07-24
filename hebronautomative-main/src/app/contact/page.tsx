@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Navbar from '@/components/layout/Navbar';
-
+import { useTranslation } from '@/i18n/LanguageContext';
 import './contact.css';
 
 const Icons = {
@@ -14,36 +14,38 @@ const Icons = {
 };
 
 export default function ContactPage() {
+  const t = useTranslation('contact');
+
   return (
     <>
       <Navbar theme="dark" />
-      
+
       {/* ── HERO STRIP ── */}
       <section className="contact-hero">
         <div className="contact-hero__content">
-          <span className="contact-label">CONTACT & RFQ</span>
-          <h1 className="contact-hero__heading">Transform Your Ideas into Precision Components</h1>
+          <span className="contact-label">{t('heroLabel')}</span>
+          <h1 className="contact-hero__heading">{t('heroTitle')}</h1>
           <p className="contact-hero__subtitle" style={{ fontWeight: 600, color: 'var(--brand-cyan)', marginBottom: '8px' }}>
-            Quality. Precision. Reliability.
+            {t('heroTagline')}
           </p>
           <p className="contact-hero__subtitle">
-            Partner with our experienced team to develop precision die-cast components that meet your design, performance, and production requirements.
+            {t('heroSubtitle')}
           </p>
         </div>
       </section>
 
       <main className="contact-main">
         <div className="contact-grid">
-          
+
           {/* ── LEFT: CONTACT INFO ── */}
           <div className="contact-info-panel">
-            <span className="info-eyebrow">GET IN TOUCH</span>
+            <span className="info-eyebrow">{t('getInTouch')}</span>
             <h2 className="info-title">Hebron Automotive<br/>Products Pvt Ltd</h2>
-            
+
             <div className="contact-icon-row">
               <Icons.Location />
               <div className="contact-details">
-                <p className="highlight">Factory Location</p>
+                <p className="highlight">{t('factoryLocation')}</p>
                 <p>Hebron Automotive Products Pvt Ltd</p>
                 <p>No. 3/250, Bharathiyar Nagar</p>
                 <p>Avalapalli Road, Hosur - 635 109</p>
@@ -51,9 +53,9 @@ export default function ContactPage() {
                 <p className="sub" style={{ marginTop: '8px' }}>GSTIN: 33AAECH6875K1Z6</p>
               </div>
             </div>
-            
+
             <hr className="contact-divider" />
-            
+
             <div className="contact-icon-row">
               <Icons.Phone />
               <div className="contact-details">
@@ -72,12 +74,12 @@ export default function ContactPage() {
             </div>
 
             <hr className="contact-divider" />
-            
-            <span className="info-eyebrow" style={{ marginBottom: '8px', display: 'block' }}>BUSINESS HOURS</span>
+
+            <span className="info-eyebrow" style={{ marginBottom: '8px', display: 'block' }}>{t('businessHours')}</span>
             <div className="contact-details">
-              <p>Mon – Sat 9:00 AM – 6:00 PM IST</p>
+              <p>{t('businessHoursVal')}</p>
             </div>
-            
+
             <div className="map-container" style={{ marginTop: '48px' }}>
               <iframe
                 src="https://maps.google.com/maps?q=Hebron+Automotive+Products+Pvt+Ltd,+Hosur,+Tamil+Nadu&t=&z=13&ie=UTF8&iwloc=&output=embed"
@@ -92,61 +94,61 @@ export default function ContactPage() {
 
           {/* ── RIGHT: RFQ FORM ── */}
           <div className="contact-rfq-panel">
-            <span className="info-eyebrow">REQUEST QUOTATION</span>
-            <h2 className="info-title" style={{ marginTop: '8px', marginBottom: '32px' }}>Send us your requirements</h2>
-            
+            <span className="info-eyebrow">{t('requestQuotation')}</span>
+            <h2 className="info-title" style={{ marginTop: '8px', marginBottom: '32px' }}>{t('sendRequirements')}</h2>
+
             <form className="rfq-form" onSubmit={(e) => e.preventDefault()}>
               <div className="form-row">
                 <div className="form-group">
-                  <label className="form-label">Company Name</label>
+                  <label className="form-label">{t('companyName')}</label>
                   <input type="text" className="form-input" required />
                 </div>
                 <div className="form-group">
-                  <label className="form-label">Contact Name</label>
+                  <label className="form-label">{t('contactName')}</label>
                   <input type="text" className="form-input" required />
                 </div>
               </div>
 
               <div className="form-row">
                 <div className="form-group">
-                  <label className="form-label">Email Address</label>
+                  <label className="form-label">{t('emailAddress')}</label>
                   <input type="email" className="form-input" required />
                 </div>
                 <div className="form-group">
-                  <label className="form-label">Phone</label>
+                  <label className="form-label">{t('phone')}</label>
                   <input type="tel" className="form-input" required />
                 </div>
               </div>
 
               <div className="form-group">
-                <label className="form-label">Component Description</label>
+                <label className="form-label">{t('componentDesc')}</label>
                 <textarea className="form-input" style={{ height: '120px', resize: 'vertical' }} required></textarea>
               </div>
 
               <div className="form-row">
                 <div className="form-group">
-                  <label className="form-label">Annual Volume (Units)</label>
+                  <label className="form-label">{t('annualVolume')}</label>
                   <input type="number" className="form-input" required />
                 </div>
                 <div className="form-group">
-                  <label className="form-label">Tolerance Req</label>
-                  <input type="text" className="form-input" placeholder="e.g. ±0.01mm" />
+                  <label className="form-label">{t('toleranceReq')}</label>
+                  <input type="text" className="form-input" placeholder={t('tolerancePlaceholder')} />
                 </div>
               </div>
 
               <div className="trust-signals">
                 <div className="trust-signal">
-                  <Icons.Check /> All enquiries treated as confidential
+                  <Icons.Check /> {t('trust1')}
                 </div>
                 <div className="trust-signal">
-                  <Icons.Check /> No commitment required at RFQ stage
+                  <Icons.Check /> {t('trust2')}
                 </div>
                 <div className="trust-signal">
-                  <Icons.Check /> IATF 16949:2016 certified supplier
+                  <Icons.Check /> {t('trust3')}
                 </div>
               </div>
 
-              <button type="submit" className="rfq-submit">Submit Request</button>
+              <button type="submit" className="rfq-submit">{t('submitBtn')}</button>
             </form>
           </div>
 
@@ -154,28 +156,27 @@ export default function ContactPage() {
 
         {/* ── AFTER YOU SUBMIT ── */}
         <div className="post-submit-strip">
-          <span className="info-eyebrow">AFTER YOU SUBMIT</span>
+          <span className="info-eyebrow">{t('afterSubmit')}</span>
           <div className="timeline-grid">
             <div className="timeline-step-card">
               <div className="step-num-large">01</div>
-              <div className="step-title">Drawing Review</div>
-              <div className="step-time">Within 24 hours</div>
+              <div className="step-title">{t('step1Title')}</div>
+              <div className="step-time">{t('step1Time')}</div>
             </div>
             <div className="timeline-step-card">
               <div className="step-num-large">02</div>
-              <div className="step-title">DFM Feedback</div>
-              <div className="step-time">Engineering assessment</div>
+              <div className="step-title">{t('step2Title')}</div>
+              <div className="step-time">{t('step2Time')}</div>
             </div>
             <div className="timeline-step-card">
               <div className="step-num-large">03</div>
-              <div className="step-title">Quotation Issued</div>
-              <div className="step-time">48–72 hours</div>
+              <div className="step-title">{t('step3Title')}</div>
+              <div className="step-time">{t('step3Time')}</div>
             </div>
           </div>
         </div>
 
       </main>
-      
 
     </>
   );
