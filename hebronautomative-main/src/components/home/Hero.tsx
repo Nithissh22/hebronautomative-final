@@ -40,7 +40,7 @@ export default function Hero() {
             </div>
             <h1 className="hero__h1">
               <span className="hero__company-name">HEBRON AUTOMOTIVE PRODUCTS PVT.LTD</span>
-              <span className="hero__main-heading">Manufacturing Precision Die Casting components</span>
+              <span className="hero__main-heading">Manufacturing Of Precision Die Casting components</span>
             </h1>
 
             <div className="hero__actions">
