@@ -166,10 +166,8 @@ export default function QualityPage() {
                 </div>
               </div>
             </section>
+          </div>
         </div>
-
-
-
       </main>
     </>
   );
