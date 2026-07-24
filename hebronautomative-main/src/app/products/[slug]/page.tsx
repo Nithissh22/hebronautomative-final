@@ -82,7 +82,7 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
 
               <div className="product-actions">
                 <button className="btn-primary">Download Technical Drawing (PDF)</button>
-                <NavLink href="/contact" className="btn-outline">Request Quote</NavLink>
+                <NavLink href="/contact" className="btn-outline">Enquiry</NavLink>
               </div>
 
             </div>

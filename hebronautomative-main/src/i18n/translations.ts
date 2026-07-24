@@ -17,7 +17,7 @@ export const translations = {
       "jobVacancies": "Job Vacancies",
       "internships": "Internships",
       "contact": "Contact",
-      "requestQuote": "Request Quote"
+      "requestQuote": "Enquiry"
     },
     "hero": {
       "precision": "Precision Die Casting",

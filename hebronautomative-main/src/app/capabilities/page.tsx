@@ -124,7 +124,7 @@ function CapabilitiesContent() {
       {/* Specs Drawer Panel */}
       <div className={`specs-drawer ${activeDrawer ? 'is-open' : ''}`}>
         <div className="specs-drawer__header">
-          <h3 className="specs-drawer__title">{activeData?.title || 'Request Quote'}</h3>
+          <h3 className="specs-drawer__title">{activeData?.title || 'Enquiry'}</h3>
           <button className="specs-drawer__close" onClick={() => setActiveDrawer(null)} aria-label="Close drawer">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
           </button>
