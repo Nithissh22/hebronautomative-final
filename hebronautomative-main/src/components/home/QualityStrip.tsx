@@ -1,10 +1,11 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from '@/i18n/LanguageContext';
 import './QualityStrip.css';
 
 export default function QualityStrip() {
   const t = useTranslation('qualityStrip');
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   return (
     <section className="qual-strip">
       <div className="container qual-strip__inner">
@@ -37,12 +38,50 @@ export default function QualityStrip() {
                 <p style={{ marginBottom: '8px', fontSize: '15px' }}><strong>Certificate No:</strong> 01 111 2436343</p>
               </div>
               <div style={{ flex: '1', display: 'flex', justifyContent: 'center' }}>
-                <img src="/images/iatf_cert_uploaded.jpg" alt="IATF 16949:2016 Certificate" style={{ maxWidth: '100%', maxHeight: '400px', objectFit: 'contain', borderRadius: '8px', border: '1px solid #e2e8f0' }} />
+                <img 
+                  src="/images/iatf_cert_uploaded.jpg" 
+                  alt="IATF 16949:2016 Certificate" 
+                  style={{ maxWidth: '100%', maxHeight: '500px', objectFit: 'contain', borderRadius: '8px', border: '1px solid #e2e8f0', cursor: 'pointer', transition: 'transform 0.2s' }} 
+                  onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
+                  onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                  onClick={() => setSelectedImage('/images/iatf_cert_uploaded.jpg')}
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {selectedImage && (
+        <div 
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.85)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex: 99999,
+            cursor: 'zoom-out'
+          }}
+          onClick={() => setSelectedImage(null)}
+        >
+          <img 
+            src={selectedImage} 
+            style={{ 
+              maxWidth: '90%', 
+              maxHeight: '90%', 
+              objectFit: 'contain',
+              borderRadius: '8px',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.5)'
+            }} 
+            alt="Full view" 
+          />
+        </div>
+      )}
     </section>
   );
 }

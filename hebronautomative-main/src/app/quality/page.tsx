@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Navbar from '@/components/layout/Navbar';
 import { useTranslation } from '@/i18n/LanguageContext';
@@ -7,6 +7,7 @@ import './quality.css';
 
 export default function QualityPage() {
   const t = useTranslation('quality');
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
     <>
@@ -56,7 +57,14 @@ export default function QualityPage() {
                     </div>
                   </div>
                   <div style={{ flex: '1', display: 'flex', justifyContent: 'center' }}>
-                    <Image src="/images/IATF.png" alt="IATF 16949:2016 Certificate" width={500} height={700} style={{ width: '100%', maxWidth: '400px', height: 'auto', border: '1px solid #e2e8f0', borderRadius: '8px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }} />
+                    <div 
+                      style={{ cursor: 'pointer', transition: 'transform 0.2s', width: '100%', maxWidth: '500px' }}
+                      onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
+                      onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                      onClick={() => setSelectedImage('/images/IATF.png')}
+                    >
+                      <Image src="/images/IATF.png" alt="IATF 16949:2016 Certificate" width={500} height={700} style={{ width: '100%', height: 'auto', border: '1px solid #e2e8f0', borderRadius: '8px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }} />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -121,6 +129,37 @@ export default function QualityPage() {
           </div>
         </div>
       </main>
+
+      {selectedImage && (
+        <div 
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.85)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex: 99999,
+            cursor: 'zoom-out'
+          }}
+          onClick={() => setSelectedImage(null)}
+        >
+          <img 
+            src={selectedImage} 
+            style={{ 
+              maxWidth: '90%', 
+              maxHeight: '90%', 
+              objectFit: 'contain',
+              borderRadius: '8px',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.5)'
+            }} 
+            alt="Full view" 
+          />
+        </div>
+      )}
     </>
   );
 }
