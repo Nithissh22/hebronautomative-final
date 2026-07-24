@@ -69,7 +69,6 @@ export default function ContactPage() {
               <Icons.Mail />
               <div className="contact-details">
                 <p><a href="mailto:director@hebronautomotive.com" style={{ textDecoration: 'none', color: 'inherit' }}>director@hebronautomotive.com</a></p>
-                <p><a href="mailto:sales@hebron.in" style={{ textDecoration: 'none', color: 'inherit' }}>sales@hebron.in</a></p>
               </div>
             </div>
 
@@ -97,42 +96,42 @@ export default function ContactPage() {
             <span className="info-eyebrow">{t('requestQuotation')}</span>
             <h2 className="info-title" style={{ marginTop: '8px', marginBottom: '32px' }}>{t('sendRequirements')}</h2>
 
-            <form className="rfq-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="rfq-form" action="mailto:director@hebronautomotive.com" method="POST" encType="text/plain">
               <div className="form-row">
                 <div className="form-group">
                   <label className="form-label">{t('companyName')}</label>
-                  <input type="text" className="form-input" required />
+                  <input type="text" name="Company_Name" className="form-input" required />
                 </div>
                 <div className="form-group">
                   <label className="form-label">{t('contactName')}</label>
-                  <input type="text" className="form-input" required />
+                  <input type="text" name="Contact_Name" className="form-input" required />
                 </div>
               </div>
 
               <div className="form-row">
                 <div className="form-group">
                   <label className="form-label">{t('emailAddress')}</label>
-                  <input type="email" className="form-input" required />
+                  <input type="email" name="Email_Address" className="form-input" required />
                 </div>
                 <div className="form-group">
                   <label className="form-label">{t('phone')}</label>
-                  <input type="tel" className="form-input" required />
+                  <input type="tel" name="Phone_Number" className="form-input" required />
                 </div>
               </div>
 
               <div className="form-group">
                 <label className="form-label">{t('componentDesc')}</label>
-                <textarea className="form-input" style={{ height: '120px', resize: 'vertical' }} required></textarea>
+                <textarea name="Component_Description" className="form-input" style={{ height: '120px', resize: 'vertical' }} required></textarea>
               </div>
 
               <div className="form-row">
                 <div className="form-group">
                   <label className="form-label">{t('annualVolume')}</label>
-                  <input type="number" className="form-input" required />
+                  <input type="number" name="Annual_Volume" className="form-input" required />
                 </div>
                 <div className="form-group">
                   <label className="form-label">{t('toleranceReq')}</label>
-                  <input type="text" className="form-input" placeholder={t('tolerancePlaceholder')} />
+                  <input type="text" name="Tolerance_Required" className="form-input" placeholder={t('tolerancePlaceholder')} />
                 </div>
               </div>
 
