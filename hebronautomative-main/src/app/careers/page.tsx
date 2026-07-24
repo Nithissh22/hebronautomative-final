@@ -36,6 +36,31 @@ const JOB_OPENINGS = [
 ];
 
 export default function CareersPage() {
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [isSuccess, setIsSuccess] = React.useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "e0da2c62-eb99-4d99-a692-6a7271a314c0");
+    formData.append("subject", "New Career Application from Website");
+    formData.append("from_name", "Hebron Automotive Website");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
+      if (response.ok) {
+        setIsSuccess(true);
+        e.currentTarget.reset();
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else alert("Something went wrong.");
+    } catch {
+      alert("Error submitting form.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <Navbar theme="dark" />
@@ -102,25 +127,25 @@ export default function CareersPage() {
             <h2>Job Application Form</h2>
             <p className="apply-subtitle">Ready to join our team? Fill out the details below and we'll be in touch.</p>
           </div>
-          <form className="apply-form">
+          <form className="apply-form" onSubmit={handleSubmit}>
           <div className="form-row">
             <div className="field-group">
               <label className="field-label">Full Name</label>
-              <input type="text" className="field-input" placeholder="Your full name" required />
+              <input type="text" name="Full_Name" className="field-input" placeholder="Your full name" required />
             </div>
             <div className="field-group">
               <label className="field-label">Email Address</label>
-              <input type="email" className="field-input" placeholder="you@email.com" required />
+              <input type="email" name="Email_Address" className="field-input" placeholder="you@email.com" required />
             </div>
           </div>
           <div className="form-row">
             <div className="field-group">
               <label className="field-label">Mobile Number</label>
-              <input type="tel" className="field-input" placeholder="+91 XXXXX XXXXX" required />
+              <input type="tel" name="Mobile_Number" className="field-input" placeholder="+91 XXXXX XXXXX" required />
             </div>
             <div className="field-group">
               <label className="field-label">Apply Position</label>
-              <select className="field-select" required>
+              <select name="Position" className="field-select" required>
                 <option value="">Select position...</option>
                 {JOB_OPENINGS.map(r => <option key={r.num}>{r.title}</option>)}
               </select>
@@ -129,30 +154,32 @@ export default function CareersPage() {
           <div className="form-row">
             <div className="field-group">
               <label className="field-label">Total Experience (Years)</label>
-              <input type="number" className="field-input" placeholder="e.g. 5" required />
+              <input type="number" name="Experience" className="field-input" placeholder="e.g. 5" required />
             </div>
             <div className="field-group">
               <label className="field-label">Notice Period (Days)</label>
-              <input type="number" className="field-input" placeholder="e.g. 30" required />
+              <input type="number" name="Notice_Period" className="field-input" placeholder="e.g. 30" required />
             </div>
           </div>
           <div className="form-row">
             <div className="field-group">
               <label className="field-label">Current CTC (LPA)</label>
-              <input type="text" className="field-input" placeholder="e.g. 6.5" required />
+              <input type="text" name="Current_CTC" className="field-input" placeholder="e.g. 6.5" required />
             </div>
             <div className="field-group">
               <label className="field-label">Expected CTC (LPA)</label>
-              <input type="text" className="field-input" placeholder="e.g. 8.0" required />
+              <input type="text" name="Expected_CTC" className="field-input" placeholder="e.g. 8.0" required />
             </div>
           </div>
           <div className="form-row">
             <div className="field-group" style={{ width: '100%' }}>
               <label className="field-label">Resume Link (Google Drive / Dropbox)</label>
-              <input type="url" className="field-input" placeholder="https://..." required />
+              <input type="url" name="Resume_Link" className="field-input" placeholder="https://..." required />
             </div>
           </div>
-          <button type="submit" className="form-submit">Submit Application</button>
+          <button type="submit" className="form-submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Submitting...' : isSuccess ? 'Application Sent!' : 'Submit Application'}
+          </button>
         </form>
         </div>
       </section>

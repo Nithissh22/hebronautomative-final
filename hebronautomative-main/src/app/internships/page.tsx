@@ -143,6 +143,31 @@ const BENEFITS_INCLUDED = [
 ];
 
 export default function InternshipsPage() {
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [isSuccess, setIsSuccess] = React.useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "e0da2c62-eb99-4d99-a692-6a7271a314c0");
+    formData.append("subject", "New Internship Application from Website");
+    formData.append("from_name", "Hebron Automotive Website");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
+      if (response.ok) {
+        setIsSuccess(true);
+        e.currentTarget.reset();
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else alert("Something went wrong.");
+    } catch {
+      alert("Error submitting form.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <Navbar theme="dark" />
@@ -284,38 +309,38 @@ export default function InternshipsPage() {
             <h2>Start your application</h2>
             <p className="apply-subtitle">Fill out your details and educational background to apply for our internship program.</p>
           </div>
-          <form className="apply-form">
+          <form className="apply-form" onSubmit={handleSubmit}>
           <div className="form-row">
             <div className="field-group">
               <label className="field-label">Full Name</label>
-              <input type="text" className="field-input" placeholder="Your full name" required />
+              <input type="text" name="Full_Name" className="field-input" placeholder="Your full name" required />
             </div>
             <div className="field-group">
               <label className="field-label">Email Address</label>
-              <input type="email" className="field-input" placeholder="you@college.edu" required />
+              <input type="email" name="Email_Address" className="field-input" placeholder="you@college.edu" required />
             </div>
           </div>
           <div className="form-row">
             <div className="field-group">
               <label className="field-label">Mobile Number</label>
-              <input type="tel" className="field-input" placeholder="+91 XXXXX XXXXX" required />
+              <input type="tel" name="Mobile_Number" className="field-input" placeholder="+91 XXXXX XXXXX" required />
             </div>
             <div className="field-group">
               <label className="field-label">College / University</label>
-              <input type="text" className="field-input" placeholder="Your institution name" required />
+              <input type="text" name="College_University" className="field-input" placeholder="Your institution name" required />
             </div>
           </div>
           <div className="form-row">
             <div className="field-group">
               <label className="field-label">Preferred Role</label>
-              <select className="field-select" required>
+              <select name="Preferred_Role" className="field-select" required>
                 <option value="">Select role...</option>
                 {ROLES.map(r => <option key={r.num}>{r.title}</option>)}
               </select>
             </div>
             <div className="field-group">
               <label className="field-label">Duration Required</label>
-              <select className="field-select" required>
+              <select name="Duration" className="field-select" required>
                 <option value="">Select duration...</option>
                 <option>3 Months</option>
                 <option>6 Months</option>
@@ -326,30 +351,32 @@ export default function InternshipsPage() {
           <div className="form-row">
             <div className="field-group">
               <label className="field-label">Total Experience (Years, if any)</label>
-              <input type="number" className="field-input" placeholder="e.g. 0" required />
+              <input type="number" name="Experience" className="field-input" placeholder="e.g. 0" required />
             </div>
             <div className="field-group">
               <label className="field-label">Notice Period (Days, if any)</label>
-              <input type="number" className="field-input" placeholder="e.g. 0" required />
+              <input type="number" name="Notice_Period" className="field-input" placeholder="e.g. 0" required />
             </div>
           </div>
           <div className="form-row">
             <div className="field-group">
               <label className="field-label">Current CTC (LPA, if any)</label>
-              <input type="text" className="field-input" placeholder="e.g. 0" />
+              <input type="text" name="Current_CTC" className="field-input" placeholder="e.g. 0" />
             </div>
             <div className="field-group">
               <label className="field-label">Expected CTC / Stipend</label>
-              <input type="text" className="field-input" placeholder="e.g. As per institute norms" required />
+              <input type="text" name="Expected_Stipend" className="field-input" placeholder="e.g. As per institute norms" required />
             </div>
           </div>
           <div className="form-row">
             <div className="field-group" style={{ width: '100%' }}>
               <label className="field-label">Resume Link (Google Drive / Dropbox)</label>
-              <input type="url" className="field-input" placeholder="https://..." required />
+              <input type="url" name="Resume_Link" className="field-input" placeholder="https://..." required />
             </div>
           </div>
-          <button type="submit" className="form-submit">Submit Application</button>
+          <button type="submit" className="form-submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Submitting...' : isSuccess ? 'Application Sent!' : 'Submit Application'}
+          </button>
         </form>
         </div>
       </section>

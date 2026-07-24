@@ -39,6 +39,32 @@ function CapabilitiesContent() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [activeDrawer, setActiveDrawer] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const activeData = activeDrawer ? DRAWER_DATA[activeDrawer as keyof typeof DRAWER_DATA] : null;
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "e0da2c62-eb99-4d99-a692-6a7271a314c0");
+    formData.append("subject", `New Enquiry: ${activeData?.title}`);
+    formData.append("from_name", "Hebron Automotive Website");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
+      if (response.ok) {
+        setIsSuccess(true);
+        e.currentTarget.reset();
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else alert("Something went wrong.");
+    } catch {
+      alert("Error submitting form.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     if (idQuery) {
@@ -135,21 +161,13 @@ function CapabilitiesContent() {
             <p style={{ color: '#64748b', marginBottom: '24px', lineHeight: 1.5, fontSize: '14px' }}>
               {activeData?.desc}
             </p>
-            <form className="quote-form" onSubmit={(e) => { 
-              e.preventDefault(); 
-              const formData = new FormData(e.currentTarget);
-              const name = formData.get('name');
-              const email = formData.get('email');
-              const message = formData.get('message');
-              const text = `*New Quote Request: ${activeData?.title}*\n\n*Name:* ${name}\n*Email:* ${email}\n\n*Requirements:*\n${message}`;
-              const whatsappUrl = `https://wa.me/916382397202?text=${encodeURIComponent(text)}`;
-              window.open(whatsappUrl, '_blank');
-              setActiveDrawer(null); 
-            }}>
+            <form className="quote-form" onSubmit={handleSubmit}>
               <input type="text" name="name" placeholder="Your Name or Company" required />
               <input type="email" name="email" placeholder="Email Address" required />
               <textarea name="message" placeholder="Describe your part requirements, volume, or timeline..." required rows={4}></textarea>
-              <button type="submit">Submit Request</button>
+              <button type="submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : isSuccess ? 'Sent Successfully!' : 'Submit Request'}
+              </button>
             </form>
           </div>
         </div>
