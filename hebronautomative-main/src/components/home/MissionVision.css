@@ -71,4 +71,19 @@
   .mission-row, .mission-row--reverse {
     flex-direction: column;
   }
+  .mission-image-wrapper, .mission-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-vision {
+    padding: 60px 0;
+  }
+  .mission-image-wrapper {
+    height: 300px;
+  }
+  .mission-card {
+    padding: 32px;
+  }
 }

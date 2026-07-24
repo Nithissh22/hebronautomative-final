@@ -26,22 +26,20 @@ export default function QualityStrip() {
             </div>
           </div>
           
-          <div className="qual-certs" style={{ display: 'flex', width: '100%' }}>
-            <div className="qual-cert" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '32px', width: '100%', background: '#fff', padding: '32px', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
-              <div style={{ flex: '1' }}>
-                <h4 style={{ fontSize: '24px', marginBottom: '16px', color: '#09122c' }}>IATF 16949:2016</h4>
-                <p style={{ marginBottom: '8px', fontSize: '15px' }}><strong>{tCommon('issuingBody') || 'Issuing Body'}:</strong> TÜV Rheinland</p>
-                <p style={{ marginBottom: '8px', fontSize: '15px' }}><strong>{tCommon('issueDate') || 'Issue Date'}:</strong> 2024-11-12</p>
-                <p style={{ marginBottom: '8px', fontSize: '15px' }}><strong>{tCommon('validUntil') || 'Valid Until'}:</strong> 2027-11-11</p>
-                <p style={{ marginBottom: '8px', fontSize: '15px' }}><strong>{tCommon('certNo') || 'Certificate No'}:</strong> 01 111 2436343</p>
+          <div className="qual-certs">
+            <div className="qual-cert-responsive">
+              <div className="qual-cert-text">
+                <h4>IATF 16949:2016</h4>
+                <p><strong>{tCommon('issuingBody') || 'Issuing Body'}:</strong> TÜV Rheinland</p>
+                <p><strong>{tCommon('issueDate') || 'Issue Date'}:</strong> 2024-11-12</p>
+                <p><strong>{tCommon('validUntil') || 'Valid Until'}:</strong> 2027-11-11</p>
+                <p><strong>{tCommon('certNo') || 'Certificate No'}:</strong> 01 111 2436343</p>
               </div>
-              <div style={{ flex: '1', display: 'flex', justifyContent: 'center' }}>
+              <div className="qual-cert-image">
                 <img 
                   src="/images/iatf_cert_uploaded.jpg" 
                   alt={tCommon('iatfCertTitle') || "IATF 16949:2016 Certificate"} 
-                  style={{ maxWidth: '100%', maxHeight: '500px', objectFit: 'contain', borderRadius: '8px', border: '1px solid #e2e8f0', cursor: 'pointer', transition: 'transform 0.2s' }} 
-                  onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
-                  onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                  className="cert-img-hover"
                   onClick={() => setSelectedImage('/images/iatf_cert_uploaded.jpg')}
                 />
               </div>
