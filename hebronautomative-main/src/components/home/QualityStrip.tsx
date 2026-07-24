@@ -34,7 +34,9 @@ export default function QualityStrip() {
               <p><strong>{t('issueDate')}</strong> 16.11.2021</p>
               <p><strong>{t('validUntil')}</strong> 15.11.2026</p>
               <p><strong>{t('certNo')}</strong> ISO 9001:2015</p>
-              <a href="/cert-iso.pdf" target="_blank" rel="noopener noreferrer" className="cert-strip-btn">{t('viewCert')}</a>
+              <a href="/images/cert-iso9001.png" target="_blank" rel="noopener noreferrer">
+                <img src="/images/cert-iso9001.png" alt="ISO 9001:2015 Certificate" style={{ width: '100%', marginTop: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' }} />
+              </a>
             </div>
             <div className="qual-cert">
               <h4>IATF 16949:2016</h4>
@@ -50,7 +52,9 @@ export default function QualityStrip() {
               <p><strong>{t('issueDate')}</strong> 16.11.2021</p>
               <p><strong>{t('validUntil')}</strong> 15.11.2026</p>
               <p><strong>{t('certNo')}</strong> ISO 14001:2015</p>
-              <a href="/cert-iso14001.pdf" target="_blank" rel="noopener noreferrer" className="cert-strip-btn">{t('viewCert')}</a>
+              <a href="/images/cert-iso14001.png" target="_blank" rel="noopener noreferrer">
+                <img src="/images/cert-iso14001.png" alt="ISO 14001:2015 Certificate" style={{ width: '100%', marginTop: '16px', borderRadius: '8px', border: '1px solid #e2e8f0' }} />
+              </a>
             </div>
           </div>
         </div>
