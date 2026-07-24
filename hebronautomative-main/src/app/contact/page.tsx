@@ -68,8 +68,8 @@ export default function ContactPage() {
             <div className="contact-icon-row">
               <Icons.Mail />
               <div className="contact-details">
-                <p>director@hebronautomotive.com</p>
-                <p>sales@hebron.in</p>
+                <p><a href="mailto:director@hebronautomotive.com" style={{ textDecoration: 'none', color: 'inherit' }}>director@hebronautomotive.com</a></p>
+                <p><a href="mailto:sales@hebron.in" style={{ textDecoration: 'none', color: 'inherit' }}>sales@hebron.in</a></p>
               </div>
             </div>
 
