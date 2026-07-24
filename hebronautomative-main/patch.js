@@ -502,14 +502,14 @@ const file = 'src/i18n/translations.ts';
 let code = fs.readFileSync(file, 'utf8');
 
 for (const [lang, keysObj] of Object.entries(newKeys)) {
-  const matchStr = `  "${lang.toUpperCase()}": {\n`;
+  const matchStr = `  "${lang.toUpperCase()}": {`;
   const index = code.indexOf(matchStr);
   if (index !== -1) {
-    let injection = '    "common": {\n';
+    let injection = '\n    "common": {\n';
     for (const [k, v] of Object.entries(keysObj)) {
       injection += `      "${k}": "${v}",\n`;
     }
-    injection += '    },\n';
+    injection += '    },';
     code = code.substring(0, index + matchStr.length) + injection + code.substring(index + matchStr.length);
   }
 }

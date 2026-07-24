@@ -33,7 +33,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     const activeLang = mounted ? language : 'EN';
     
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const langDict = translations[activeLang][section] as any;
+    const activeDict = translations[activeLang] as any;
+    const langDict = activeDict[section] as any;
     if (langDict && langDict[key]) {
       return langDict[key];
     }

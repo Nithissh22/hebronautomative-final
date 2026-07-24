@@ -1,12 +1,8 @@
+"use client";
 import React from 'react';
 import Navbar from '@/components/layout/Navbar';
 
 import './internships.css';
-
-export const metadata = {
-  title: 'Careers & Internships | Hebron Automotive',
-  description: 'Hands-on industrial training at an IATF 16949:2016 certified automotive components manufacturer in Hosur, Tamil Nadu.',
-};
 
 // Handcrafted SVG Icons
 const Icons = {

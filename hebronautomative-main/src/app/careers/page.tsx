@@ -1,12 +1,8 @@
+"use client";
 import React from 'react';
 import Navbar from '@/components/layout/Navbar';
 
 import '../internships/internships.css'; // We can share the same CSS structure
-
-export const metadata = {
-  title: 'Job Vacancies | Hebron Automotive',
-  description: 'Join our team at an IATF 16949:2016 certified automotive components manufacturer in Hosur, Tamil Nadu.',
-};
 
 const JOB_OPENINGS = [
   {

@@ -130,7 +130,6 @@ function CapabilitiesContent() {
     setActiveIndex(index);
   };
 
-  const activeData = activeDrawer ? DRAWER_DATA[activeDrawer as keyof typeof DRAWER_DATA] : null;
 
   return (
     <div className="page-fade-in">
