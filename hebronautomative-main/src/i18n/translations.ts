@@ -3,8 +3,8 @@ export const translations = {
     "nav": {
       "about": "About",
       "capabilities": "Capabilities",
-      "dieCasting": "Die Casting",
-      "cncMachining": "VMC MACHINING AS USA",
+      "dieCasting": "High Pressure Die Casting",
+      "cncMachining": "VMC MACHINING HAAS USA",
       "powderCoating": "Powder Coating",
       "subAssembly": "Sub Assembly",
       "qualityInspection": "Quality & Inspection",
