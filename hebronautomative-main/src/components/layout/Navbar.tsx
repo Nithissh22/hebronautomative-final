@@ -102,6 +102,7 @@ const Navbar: FC<NavbarProps> = ({ theme }) => {
                 className="nav__dropdown-container"
                 onMouseEnter={() => setActiveDropdown(link.labelKey)}
                 onMouseLeave={() => setActiveDropdown(null)}
+                onClick={() => setActiveDropdown(activeDropdown === link.labelKey ? null : link.labelKey)}
               >
                 {link.href === '#' ? (
                   <span className={`nav__dropdown-trigger ${pathname.startsWith('/careers') || pathname.startsWith('/internships') ? 'active' : ''}`}>
@@ -138,6 +139,23 @@ const Navbar: FC<NavbarProps> = ({ theme }) => {
             </NavLink>
           );
         })}
+
+        {/* Mobile-only Language Grid */}
+        <div className="nav__mobile-lang-section">
+          <span className="nav__mobile-lang-title">Change Language</span>
+          <div className="nav__mobile-lang-grid">
+            {LANGUAGES.map(lang => (
+              <button 
+                key={lang.code} 
+                className={`nav__mobile-lang-btn ${language === lang.code ? 'active' : ''}`}
+                onClick={() => { setLanguage(lang.code as any); setMobileMenuOpen(false); }}
+              >
+                <img src={`https://flagcdn.com/w20/${lang.flag}.png`} alt={lang.name} />
+                <span>{lang.name}</span>
+              </button>
+            ))}
+          </div>
+        </div>
       </nav>
 
       <div className="nav__right">
