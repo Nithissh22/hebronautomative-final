@@ -14,6 +14,7 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
   const cap = capabilitiesList[activeIndex];
   const [activeTab, setActiveTab] = useState<'equipment' | 'inventory' | 'process'>('equipment');
   const [prevIndex, setPrevIndex] = useState(activeIndex);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   // Derived state pattern instead of useEffect to avoid cascading render error
   if (activeIndex !== prevIndex) {
@@ -34,6 +35,13 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
   const subAssemblyImages = [
     '/images/sub_assembly_photoroom_1.png',
     '/images/sub_assembly_photoroom_2.png',
+  ];
+
+  const qualitySystemsImages = [
+    '/images/quality_slider_1.png',
+    '/images/quality_slider_2.png',
+    '/images/quality_slider_3.png',
+    '/images/quality_slider_4.jpeg',
   ];
 
   React.useEffect(() => {
@@ -97,7 +105,6 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
                 </div>
               </div>
             ))}
-            
             {cap.id === 'sub-assembly' && (
               <>
                 <style>{`
@@ -115,7 +122,33 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
                   }}>
                     {/* Render original images plus a duplicate of the first one for seamless looping */}
                     {[...subAssemblyImages, subAssemblyImages[0]].map((src, i) => (
-                      <img key={i} src={src} style={{ width: '100%', height: '90px', objectFit: 'contain', padding: '8px', boxSizing: 'border-box' }} alt={`Sub-assembly part ${i + 1}`} />
+                      <img key={i} src={src} onClick={() => setSelectedImage(src)} style={{ width: '100%', height: '90px', objectFit: 'contain', padding: '8px', boxSizing: 'border-box', cursor: 'pointer' }} alt={`Sub-assembly part ${i + 1}`} />
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
+
+            {cap.id === 'quality-systems' && (
+              <>
+                <style>{`
+                  @keyframes slideVerticalLoopQuality {
+                    0%, 15% { transform: translateY(0); }
+                    25%, 40% { transform: translateY(-20%); }
+                    50%, 65% { transform: translateY(-40%); }
+                    75%, 90% { transform: translateY(-60%); }
+                    100% { transform: translateY(-80%); }
+                  }
+                `}</style>
+                <div className="quality-systems-slider-wrapper" style={{ overflow: 'hidden', position: 'relative', height: '90px', borderRadius: '10px', background: '#f8fbff', border: '1px solid #eef2f7' }}>
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    animation: 'slideVerticalLoopQuality 8s infinite linear'
+                  }}>
+                    {/* Render original images plus a duplicate of the first one for seamless looping */}
+                    {[...qualitySystemsImages, qualitySystemsImages[0]].map((src, i) => (
+                      <img key={`quality-img-${i}`} src={src} onClick={() => setSelectedImage(src)} style={{ width: '100%', height: '90px', objectFit: 'contain', padding: '8px', boxSizing: 'border-box', cursor: 'pointer' }} alt={`Quality section image ${i + 1}`} />
                     ))}
                   </div>
                 </div>
@@ -162,6 +195,37 @@ export default function CapabilityDetail({ activeIndex, onClose, onSelect, onQuo
           </button>
         </div>
       </div>
+
+      {selectedImage && (
+        <div 
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex: 9999,
+            cursor: 'pointer'
+          }}
+          onClick={() => setSelectedImage(null)}
+        >
+          <img 
+            src={selectedImage} 
+            style={{ 
+              maxWidth: '90%', 
+              maxHeight: '90%', 
+              objectFit: 'contain',
+              borderRadius: '8px',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.3)'
+            }} 
+            alt="Full view" 
+          />
+        </div>
+      )}
     </div>
   );
 }
