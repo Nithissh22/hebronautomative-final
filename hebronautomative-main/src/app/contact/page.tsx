@@ -15,6 +15,36 @@ const Icons = {
 
 export default function ContactPage() {
   const t = useTranslation('contact');
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [isSuccess, setIsSuccess] = React.useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "e0da2c62-eb99-4d99-a692-6a7271a314c0");
+    formData.append("subject", "New Enquiry from Hebron Automotive Website");
+    formData.append("from_name", "Hebron Automotive Website");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      
+      if (response.ok) {
+        setIsSuccess(true);
+        e.currentTarget.reset();
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        alert("Something went wrong. Please try again or email us directly.");
+      }
+    } catch (error) {
+      alert("Error submitting form. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -96,7 +126,7 @@ export default function ContactPage() {
             <span className="info-eyebrow">{t('requestQuotation')}</span>
             <h2 className="info-title" style={{ marginTop: '8px', marginBottom: '32px' }}>{t('sendRequirements')}</h2>
 
-            <form className="rfq-form" action="mailto:director@hebronautomotive.com" method="POST" encType="text/plain">
+            <form className="rfq-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group">
                   <label className="form-label">{t('companyName')}</label>
@@ -147,7 +177,9 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <button type="submit" className="rfq-submit">{t('submitBtn')}</button>
+              <button type="submit" className="rfq-submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : isSuccess ? 'Sent Successfully!' : t('submitBtn')}
+              </button>
             </form>
           </div>
 
