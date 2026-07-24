@@ -4,7 +4,7 @@ export const translations = {
       "about": "About",
       "capabilities": "Capabilities",
       "dieCasting": "High Pressure Die Casting",
-      "cncMachining": "VMC MACHINING HAAS USA",
+      "cncMachining": "VMC-HAAS USA MACHINING",
       "powderCoating": "Powder Coating",
       "subAssembly": "Sub Assembly",
       "qualityInspection": "Quality & Inspection",
