@@ -68,7 +68,7 @@ export default function Footer() {
             <span>Avalapalli Road, Hosur - 635 109</span>
             <span>Krishnagiri Dist., Tamil Nadu, India</span>
           </p>
-          <a href="mailto:hebronautomotive@gmail.com" className="footer__link" target="_blank" rel="noopener noreferrer">hebronautomotive@gmail.com</a>
+          <a href="mailto:director@hebronautomotive.com" className="footer__link" target="_blank" rel="noopener noreferrer">director@hebronautomotive.com</a>
           <a href="https://wa.me/916382397202" className="footer__link" target="_blank" rel="noopener noreferrer">+91 63823 97202</a>
         </div>
 
