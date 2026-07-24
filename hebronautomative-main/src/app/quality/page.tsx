@@ -48,9 +48,6 @@ export default function QualityPage() {
                   <div className="cert-header">
                     <h3 className="cert-title">ISO 9001:2015</h3>
                   </div>
-                  <div style={{ width: '100%', marginBottom: '24px' }}>
-                    <Image src="/images/cert-iso9001.png" alt="ISO 9001:2015 Certificate" width={400} height={560} style={{ width: '100%', height: 'auto', border: '1px solid #e2e8f0', borderRadius: '4px' }} />
-                  </div>
                   <div className="cert-body">
                     <div className="cert-row"><span className="cert-lbl">{t('issuingBody')}</span> CBF</div>
                     <div className="cert-row"><span className="cert-lbl">{t('issueDate')}</span> 16.11.2026</div>
@@ -79,9 +76,6 @@ export default function QualityPage() {
                 <div className="new-cert-card">
                   <div className="cert-header">
                     <h3 className="cert-title">ISO 14001:2015</h3>
-                  </div>
-                  <div style={{ width: '100%', marginBottom: '24px' }}>
-                    <Image src="/images/cert-iso14001.png" alt="ISO 14001:2015 Certificate" width={400} height={560} style={{ width: '100%', height: 'auto', border: '1px solid #e2e8f0', borderRadius: '4px' }} />
                   </div>
                   <div className="cert-body">
                     <div className="cert-row"><span className="cert-lbl">{t('issuingBody')}</span> CDF Scenes</div>
