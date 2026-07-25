@@ -6,7 +6,6 @@ import NavLink from '@/components/ui/NavLink';
 import CustomersShowcase from '@/components/about/CustomersShowcase';
 import TimelineShowcase from '@/components/about/TimelineShowcase';
 import FoundationShowcase from '@/components/about/FoundationShowcase';
-import CompanyMetrics from '@/components/about/CompanyMetrics';
 import { useTranslation } from '@/i18n/LanguageContext';
 import './about.css';
 
@@ -21,10 +20,10 @@ export default function AboutPage() {
       <section className="about-hero">
         <div className="container about-hero__content">
           <div className="eyebrow" style={{ marginBottom: 'var(--space-2)' }}>
-            {t('heroEyebrow')}
-          </div>
-          <h1 className="section-heading" style={{ color: 'var(--text-on-dark)' }}>
             {t('heroTitle')}
+          </div>
+          <h1 className="section-heading" style={{ color: 'var(--text-on-dark)', textTransform: 'uppercase' }}>
+            {t('heroEyebrow')}
           </h1>
           <div className="about-hero__facts">
             {t('heroFacts')}
@@ -78,8 +77,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 5.5. Performance & Capacity */}
-        <CompanyMetrics />
 
         {/* 6. Leadership */}
         <section className="leadership-section">

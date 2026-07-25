@@ -77,7 +77,7 @@ export default function ContactPage() {
           {/* ── LEFT: CONTACT INFO ── */}
           <div className="contact-info-panel">
             <span className="info-eyebrow">{t('getInTouch')}</span>
-            <h2 className="info-title">Hebron Automotive<br/>Products Pvt Ltd</h2>
+            <h2 className="info-title">Hebron Automotive Products Pvt Ltd</h2>
 
             <div className="contact-icon-row">
               <Icons.Location />
